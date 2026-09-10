@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Agents | Haven Estates</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        primary: '#4f46e5', // Indigo 600
+                        primaryHover: '#4338ca', // Indigo 700
+                        secondary: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-md z-50 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center text-xl shadow-lg">
+                            <i class="fa-solid fa-building-user"></i>
+                        </div>
+                        <span class="font-bold text-2xl text-slate-900 tracking-tight">Haven Estates</span>
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">Home</a>
+                    <a href="property.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">Properties</a>
+                    <a href="agents.html" class="nav-link text-primary font-semibold transition">Agents</a>
+                    <a href="about.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">About</a>
+                    <a href="contact.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">Contact</a>
+                    <button data-open-add-property class="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-primaryHover hover:shadow-lg transition duration-300 flex items-center gap-2">
+                        <i class="fa-solid fa-plus text-xs"></i> Add Property
+                    </button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary text-2xl p-2">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 pt-3 pb-6 space-y-3 shadow-xl">
+            <a href="index.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">Home</a>
+            <a href="property.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">Properties</a>
+            <a href="agents.html" class="nav-link block py-2.5 text-primary font-semibold">Agents</a>
+            <a href="about.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">About</a>
+            <a href="contact.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">Contact</a>
+            <button data-open-add-property class="w-full mt-2 bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:bg-primaryHover transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-plus text-xs"></i> Add Property
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="relative pt-32 pb-20 bg-slate-900 overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Team Background" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="text-indigo-400 font-bold tracking-wider uppercase text-xs mb-3 block">Expert Advisory</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Meet Our Top Realtors</h1>
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto">Connect directly with certified real estate advisors committed to finding your ideal property and negotiating the best terms.</p>
+        </div>
+    </section>
+
+    <!-- Agents Grid Section -->
+    <main class="flex-1 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-1">Our Professional Roster</h2>
+                    <p class="text-slate-600 text-sm">Showing <span id="agent-count" class="font-bold text-primary">6</span> licensed real estate experts</p>
+                </div>
+                <!-- Real-time Filter/Search for Agents -->
+                <div class="relative w-full md:w-80">
+                    <input id="agent-search-input" type="text" placeholder="Search agent name or specialty..." class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition text-sm shadow-sm">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                </div>
+            </div>
+
+            <!-- Dynamic Agent Cards Grid -->
+            <div id="agents-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Injected dynamically by JavaScript -->
+            </div>
+
+            <!-- Empty Search State -->
+            <div id="no-agents-state" class="hidden text-center py-16 bg-white rounded-3xl border border-slate-100 p-8 shadow-sm">
+                <div class="w-16 h-16 mx-auto rounded-full bg-indigo-50 text-primary flex items-center justify-center text-2xl mb-4">
+                    <i class="fa-solid fa-user-xmark"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">No Agents Found</h3>
+                <p class="text-slate-500 text-sm max-w-md mx-auto mb-4">We couldn't find any realtors matching that name or specialty. Try clearing your search.</p>
+                <button onclick="document.getElementById('agent-search-input').value = ''; renderAgents();" class="text-primary font-bold text-sm hover:underline">
+                    Clear Search
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Join Team CTA -->
+    <section class="py-16 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <span class="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">Careers & Partnerships</span>
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Are you a talented real estate professional?</h2>
+            <p class="text-slate-600 mb-8 max-w-2xl mx-auto text-sm leading-relaxed">We are always looking for driven brokers and property managers to join our growing global team. Gain access to premium high-net-worth listings, tech tools, and aggressive commissions.</p>
+            <a href="contact.html" class="bg-primary text-white font-bold px-8 py-3.5 rounded-xl hover:bg-primaryHover transition shadow-lg shadow-indigo-500/25 inline-flex items-center gap-2">
+                Join Haven Estates <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-16 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6 text-white">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-building-user text-sm"></i>
+                        </div>
+                        <span class="font-bold text-xl tracking-tight">Haven Estates</span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6">Your trusted partner in finding premium residential and commercial properties. We make real estate simple and transparent.</p>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
+                        <li><a href="property.html?purpose=For+Sale" class="hover:text-primary transition">Properties for Sale</a></li>
+                        <li><a href="property.html?purpose=For+Rent" class="hover:text-primary transition">Properties for Rent</a></li>
+                        <li><a href="agents.html" class="hover:text-primary transition">Our Agents</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Contact Us</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-primary"></i>
+                            <span>123 Estate Blvd, Suite 100</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-primary"></i>
+                            <a href="tel:+15551234567" class="hover:text-primary transition">+1 (555) 123-4567</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-primary"></i>
+                            <a href="mailto:info@havenestates.com" class="hover:text-primary transition">info@havenestates.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Newsletter</h4>
+                    <p class="text-sm mb-4">Subscribe for the latest property updates.</p>
+                    <form class="flex" data-newsletter>
+                        <input type="email" placeholder="Email Address" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-l-xl focus:outline-none focus:border-primary text-sm text-white">
+                        <button type="submit" class="bg-primary px-4 py-2.5 rounded-r-xl hover:bg-primaryHover transition text-white"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+                <p>© 2026 Haven Estates. Designed & Developed by Qasim Ali.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script>
+        function renderAgents() {
+            const grid = document.getElementById('agents-grid');
+            const noResults = document.getElementById('no-agents-state');
+            const countEl = document.getElementById('agent-count');
+            const query = document.getElementById('agent-search-input')?.value.toLowerCase().trim() || '';
+
+            const agents = HavenDB.getAgents();
+            const filtered = agents.filter(agent => {
+                if (!query) return true;
+                const haystack = `${agent.name} ${agent.role} ${agent.specialty || ''} ${agent.bio || ''}`.toLowerCase();
+                return haystack.includes(query);
+            });
+
+            if (countEl) countEl.textContent = filtered.length;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+                grid.innerHTML = filtered.map(agent => {
+                    const avatarHtml = agent.avatarImg 
+                        ? `<img src="${agent.avatarImg}" alt="${agent.name}" class="w-full h-full object-cover">`
+                        : `<span class="text-4xl font-bold text-slate-400">${agent.avatar || 'QA'}</span>`;
+
+                    return `
+                        <div class="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col justify-between">
+                            <div>
+                                <div class="p-8 text-center bg-slate-50 border-b border-slate-100 relative">
+                                    <div class="absolute top-4 right-4 bg-primary/10 text-primary px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">
+                                        ${agent.badge || 'Certified'}
+                                    </div>
+                                    <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-4 border-white shadow-md group-hover:border-primary transition duration-300 relative bg-slate-200 flex items-center justify-center">
+                                        ${avatarHtml}
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900 mb-0.5">${agent.name}</h3>
+                                    <p class="text-primary font-semibold text-xs">${agent.role}</p>
+                                    <span class="inline-block mt-2 px-3 py-1 bg-white border border-slate-200 rounded-full text-[11px] text-slate-600 font-medium">
+                                        ${agent.specialty || 'General Realty'}
+                                    </span>
+                                </div>
+                                <div class="p-6">
+                                    <div class="grid grid-cols-2 gap-4 mb-6 text-center border-b border-slate-100 pb-5">
+                                        <div>
+                                            <p class="text-2xl font-bold text-slate-900">${agent.sold || '50+'}</p>
+                                            <p class="text-[10px] text-slate-400 uppercase tracking-wider font-bold mt-0.5">Properties Sold</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-2xl font-bold text-slate-900">${agent.experience || '5 Yrs'}</p>
+                                            <p class="text-[10px] text-slate-400 uppercase tracking-wider font-bold mt-0.5">Experience</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-slate-600 text-xs leading-relaxed mb-6 line-clamp-3">${agent.bio}</p>
+                                    <ul class="space-y-2.5 mb-6 text-xs text-slate-600">
+                                        <li>
+                                            <a href="tel:${agent.phone}" class="flex items-center gap-2.5 hover:text-primary transition">
+                                                <i class="fa-solid fa-phone text-primary w-4 text-center"></i> ${agent.phone}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="mailto:${agent.email}" class="flex items-center gap-2.5 hover:text-primary transition">
+                                                <i class="fa-solid fa-envelope text-primary w-4 text-center"></i> ${agent.email}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="px-6 pb-6 pt-0 flex gap-2">
+                                <a href="property.html?agent=${encodeURIComponent(agent.name)}" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-building"></i> View Listings
+                                </a>
+                                <button onclick="HavenApp.openContactAgentModal('${agent.name}')" class="flex-1 bg-primary hover:bg-primaryHover text-white py-3 rounded-xl font-bold text-xs transition shadow-md shadow-indigo-500/20 flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-paper-plane"></i> Contact Agent
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderAgents();
+            document.getElementById('agent-search-input')?.addEventListener('input', renderAgents);
+        });
+    </script>
+</body>
+</html>
