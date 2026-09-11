@@ -211,7 +211,7 @@ const HavenApp = {
                             </div>
                             <div>
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Phone Number</label>
-                                <input type="tel" name="senderPhone" placeholder="+1 (555) 000-0000" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
+                                <input type="tel" name="senderPhone" placeholder="+1 (800) 488-4066" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
                             </div>
                         </div>
 
@@ -435,7 +435,7 @@ const HavenApp = {
                         </div>
                     </div>
                     <div class="flex gap-2">
-                        <a href="tel:${prop.agent?.phone || '+15551234567'}" class="px-4 py-2 bg-white border border-slate-200 text-slate-700 hover:text-primary hover:border-primary rounded-xl text-sm font-semibold transition flex items-center gap-1.5">
+                        <a href="tel:${prop.agent?.phone || '+18004884066'}" class="px-4 py-2 bg-white border border-slate-200 text-slate-700 hover:text-primary hover:border-primary rounded-xl text-sm font-semibold transition flex items-center gap-1.5">
                             <i class="fa-solid fa-phone"></i> Call
                         </a>
                         <button onclick="HavenApp.openContactAgentModal('${prop.agent?.name || 'Qasim Ali'}', '${prop.title}')" class="px-4 py-2 bg-primary text-white hover:bg-primaryHover rounded-xl text-sm font-semibold transition flex items-center gap-1.5">

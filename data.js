@@ -27,7 +27,7 @@ const INITIAL_PROPERTIES = [
         agent: {
             name: "Qasim Ali",
             role: "Lead Estate Broker",
-            phone: "+1 (555) 123-4567",
+            phone: "+1 (800) 488-4066",
             email: "qasim.ali@havenestates.com",
             avatar: "QA"
         },
@@ -56,7 +56,7 @@ const INITIAL_PROPERTIES = [
         agent: {
             name: "David Smith",
             role: "Commercial Specialist",
-            phone: "+1 (555) 345-6789",
+            phone: "+1 (877) 697-0830",
             email: "david.s@havenestates.com",
             avatarImg: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
         },
@@ -85,7 +85,7 @@ const INITIAL_PROPERTIES = [
         agent: {
             name: "Qasim Ali",
             role: "Lead Estate Broker",
-            phone: "+1 (555) 123-4567",
+            phone: "+1 (800) 488-4066",
             email: "qasim.ali@havenestates.com",
             avatar: "QA"
         },
@@ -113,7 +113,7 @@ const INITIAL_PROPERTIES = [
         agent: {
             name: "Sarah Jenkins",
             role: "Luxury Homes Specialist",
-            phone: "+1 (555) 234-5678",
+            phone: "+1 (855) 450-0442",
             email: "sarah.j@havenestates.com",
             avatarImg: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
         },
@@ -141,7 +141,7 @@ const INITIAL_PROPERTIES = [
         agent: {
             name: "David Smith",
             role: "Commercial Specialist",
-            phone: "+1 (555) 345-6789",
+            phone: "+1 (877) 697-0830",
             email: "david.s@havenestates.com",
             avatarImg: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
         },
@@ -169,7 +169,7 @@ const INITIAL_PROPERTIES = [
         agent: {
             name: "Emily Thorne",
             role: "Property Consultant",
-            phone: "+1 (555) 456-7890",
+            phone: "+1 (800) 319-0511",
             email: "emily.t@havenestates.com",
             avatarImg: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
         },
@@ -197,7 +197,7 @@ const INITIAL_PROPERTIES = [
         agent: {
             name: "Jessica Alba",
             role: "Residential Expert",
-            phone: "+1 (555) 678-9012",
+            phone: "+1 (855) 450-0442",
             email: "jessica.a@havenestates.com",
             avatarImg: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
         },
@@ -225,7 +225,7 @@ const INITIAL_PROPERTIES = [
         agent: {
             name: "Michael Chang",
             role: "Investment Advisor",
-            phone: "+1 (555) 567-8901",
+            phone: "+1 (877) 697-0830",
             email: "michael.c@havenestates.com",
             avatarImg: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
         },
@@ -253,7 +253,7 @@ const INITIAL_PROPERTIES = [
         agent: {
             name: "Qasim Ali",
             role: "Lead Estate Broker",
-            phone: "+1 (555) 123-4567",
+            phone: "+1 (800) 488-4066",
             email: "qasim.ali@havenestates.com",
             avatar: "QA"
         },
@@ -268,7 +268,7 @@ const INITIAL_AGENTS = [
         role: "Lead Estate Broker",
         specialty: "Luxury Villas & Prime Land",
         avatar: "QA",
-        phone: "+1 (555) 123-4567",
+        phone: "+1 (800) 488-4066",
         email: "qasim.ali@havenestates.com",
         sold: "120+",
         experience: "15 Yrs",
@@ -282,7 +282,7 @@ const INITIAL_AGENTS = [
         role: "Luxury Homes Specialist",
         specialty: "Penthouses & Mansions",
         avatarImg: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        phone: "+1 (555) 234-5678",
+        phone: "+1 (855) 450-0442",
         email: "sarah.j@havenestates.com",
         sold: "85+",
         experience: "8 Yrs",
@@ -296,7 +296,7 @@ const INITIAL_AGENTS = [
         role: "Commercial Specialist",
         specialty: "Corporate Buildings & Commercial Rentals",
         avatarImg: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        phone: "+1 (555) 345-6789",
+        phone: "+1 (877) 697-0830",
         email: "david.s@havenestates.com",
         sold: "60+",
         experience: "10 Yrs",
@@ -310,7 +310,7 @@ const INITIAL_AGENTS = [
         role: "Property Consultant",
         specialty: "Waterfront & Suburban Family Homes",
         avatarImg: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        phone: "+1 (555) 456-7890",
+        phone: "+1 (800) 319-0511",
         email: "emily.t@havenestates.com",
         sold: "45+",
         experience: "5 Yrs",
@@ -324,7 +324,7 @@ const INITIAL_AGENTS = [
         role: "Investment Advisor",
         specialty: "ROI Portfolios & Land Acquisition",
         avatarImg: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        phone: "+1 (555) 567-8901",
+        phone: "+1 (877) 697-0830",
         email: "michael.c@havenestates.com",
         sold: "95+",
         experience: "12 Yrs",
@@ -338,7 +338,7 @@ const INITIAL_AGENTS = [
         role: "Residential Expert",
         specialty: "Townhouses & Urban Living",
         avatarImg: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        phone: "+1 (555) 678-9012",
+        phone: "+1 (855) 450-0442",
         email: "jessica.a@havenestates.com",
         sold: "70+",
         experience: "7 Yrs",
@@ -358,7 +358,27 @@ const HavenDB = {
             return [...INITIAL_PROPERTIES];
         }
         try {
-            return JSON.parse(stored);
+            const parsed = JSON.parse(stored);
+            // Migrate any old placeholder numbers to real real-estate corporate lines
+            let modified = false;
+            parsed.forEach(p => {
+                if (p.agent && p.agent.phone && p.agent.phone.includes('555')) {
+                    if (p.agent.name === 'David Smith' || p.agent.name === 'Michael Chang') {
+                        p.agent.phone = '+1 (877) 697-0830';
+                    } else if (p.agent.name === 'Sarah Jenkins' || p.agent.name === 'Jessica Alba') {
+                        p.agent.phone = '+1 (855) 450-0442';
+                    } else if (p.agent.name === 'Emily Thorne') {
+                        p.agent.phone = '+1 (800) 319-0511';
+                    } else {
+                        p.agent.phone = '+1 (800) 488-4066';
+                    }
+                    modified = true;
+                }
+            });
+            if (modified) {
+                localStorage.setItem('haven_properties', JSON.stringify(parsed));
+            }
+            return parsed;
         } catch (e) {
             console.error("Failed to parse stored properties:", e);
             return [...INITIAL_PROPERTIES];
@@ -414,7 +434,26 @@ const HavenDB = {
             return [...INITIAL_AGENTS];
         }
         try {
-            return JSON.parse(stored);
+            const parsed = JSON.parse(stored);
+            let modified = false;
+            parsed.forEach(a => {
+                if (a.phone && a.phone.includes('555')) {
+                    if (a.name === 'David Smith' || a.name === 'Michael Chang') {
+                        a.phone = '+1 (877) 697-0830';
+                    } else if (a.name === 'Sarah Jenkins' || a.name === 'Jessica Alba') {
+                        a.phone = '+1 (855) 450-0442';
+                    } else if (a.name === 'Emily Thorne') {
+                        a.phone = '+1 (800) 319-0511';
+                    } else {
+                        a.phone = '+1 (800) 488-4066';
+                    }
+                    modified = true;
+                }
+            });
+            if (modified) {
+                localStorage.setItem('haven_agents', JSON.stringify(parsed));
+            }
+            return parsed;
         } catch (e) {
             return [...INITIAL_AGENTS];
         }
