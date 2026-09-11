@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Haven Estates</title>
+    <title>About Us | City Property Links (DHA Bahawalpur Reg #15)</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -37,31 +37,40 @@
 <body class="font-sans text-slate-800 bg-white antialiased flex flex-col min-h-screen">
 
     <!-- Navbar -->
-    <nav class="fixed w-full bg-white/95 backdrop-blur-md z-50 shadow-sm transition-all duration-300">
+    <nav class="fixed w-full bg-white/95 backdrop-blur-md z-50 shadow-sm transition-all duration-300 border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center gap-2">
-                        <div class="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center text-xl shadow-lg">
-                            <i class="fa-solid fa-building-user"></i>
+                    <a href="index.html" class="flex items-center gap-3">
+                        <div class="w-11 h-11 bg-primary text-white rounded-xl flex items-center justify-center text-xl shadow-lg shadow-indigo-500/20">
+                            <i class="fa-solid fa-building-shield"></i>
                         </div>
-                        <span class="font-bold text-2xl text-slate-900 tracking-tight">Haven Estates</span>
+                        <div>
+                            <span class="font-bold text-xl text-slate-900 tracking-tight block leading-tight">City Property Links</span>
+                            <span class="text-[10px] font-bold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded inline-block">DHA Reg #15 • 5★</span>
+                        </div>
                     </a>
                 </div>
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-7">
                     <a href="index.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">Home</a>
                     <a href="property.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">Properties</a>
-                    <a href="agents.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">Agents</a>
-                    <a href="about.html" class="nav-link text-primary font-semibold transition">About</a>
+                    <a href="agents.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">Our Team</a>
+                    <a href="about.html" class="nav-link text-primary font-semibold transition">About Us</a>
                     <a href="contact.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">Contact</a>
-                    <button data-open-add-property class="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-primaryHover hover:shadow-lg transition duration-300 flex items-center gap-2">
+                    <a href="https://wa.me/923036448400" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 font-bold text-sm flex items-center gap-1.5 bg-emerald-50 px-3 py-2 rounded-xl border border-emerald-200 transition">
+                        <i class="fa-brands fa-whatsapp text-base"></i> 0303-6448400
+                    </a>
+                    <button data-open-add-property class="bg-primary text-white px-5 py-2.5 rounded-full font-semibold hover:bg-primaryHover hover:shadow-lg transition duration-300 flex items-center gap-2 text-sm">
                         <i class="fa-solid fa-plus text-xs"></i> Add Property
                     </button>
                 </div>
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
+                <div class="md:hidden flex items-center gap-2">
+                    <a href="https://wa.me/923036448400" target="_blank" rel="noopener noreferrer" class="text-emerald-600 bg-emerald-50 p-2 rounded-xl text-lg border border-emerald-200">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
                     <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary text-2xl p-2">
                         <i class="fa-solid fa-bars"></i>
                     </button>
@@ -72,9 +81,12 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 pt-3 pb-6 space-y-3 shadow-xl">
             <a href="index.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">Home</a>
             <a href="property.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">Properties</a>
-            <a href="agents.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">Agents</a>
-            <a href="about.html" class="nav-link block py-2.5 text-primary font-semibold">About</a>
+            <a href="agents.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">Our Team</a>
+            <a href="about.html" class="nav-link block py-2.5 text-primary font-semibold">About Us</a>
             <a href="contact.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">Contact</a>
+            <a href="https://wa.me/923036448400" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 text-emerald-700 bg-emerald-50 rounded-xl font-bold flex items-center justify-center gap-2 border border-emerald-200">
+                <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp: 0303-6448400
+            </a>
             <button data-open-add-property class="w-full mt-2 bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:bg-primaryHover transition flex items-center justify-center gap-2">
                 <i class="fa-solid fa-plus text-xs"></i> Add Property
             </button>
@@ -87,9 +99,13 @@
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Office Background" class="w-full h-full object-cover">
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="text-indigo-400 font-bold tracking-wider uppercase text-xs mb-3 block">Who We Are</span>
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">About Haven Estates</h1>
-            <p class="text-lg text-slate-300 max-w-2xl mx-auto">Redefining the real estate experience through unwavering integrity, technological innovation, and exceptional client advocacy.</p>
+            <span class="text-amber-300 font-bold tracking-wider uppercase text-xs mb-3 block">
+                <i class="fa-solid fa-certificate text-amber-400 mr-1.5"></i> DHA Bahawalpur Registered Dealer #15 (5-Star Rating)
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">About City Property Links</h1>
+            <p class="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                City Property Links provides real estate services in Bahawalpur, helping clients explore residential and commercial property opportunities. Our focus is on transparent dealing, professional guidance and helping clients make informed property decisions.
+            </p>
         </div>
     </section>
 
@@ -100,20 +116,30 @@
                 
                 <!-- Text Content -->
                 <div>
-                    <span class="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">Our Heritage</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">Building Dreams & Securing Legacies Since 2010</h2>
+                    <span class="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">Our Heritage & Credibility</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">Serving Bahawalpur with Transparent Real Estate Services</h2>
                     <p class="text-slate-600 mb-6 leading-relaxed text-sm sm:text-base">
-                        At Haven Estates, we believe that finding a home is more than just a transaction; it’s a life-defining milestone. Founded with a vision to bring absolute transparency and trust to the real estate market, we have grown into one of the most respected agencies in the region.
+                        Headquartered at <strong>Office #9, Al-Madina Commercial Center, Airport Road, near Meezan Bank, Bahawalpur Cantt</strong>, <strong>City Property Links</strong> is a premier property brokerage firm serving investors, home buyers, and commercial developers throughout the Bahawalpur region.
                     </p>
-                    <p class="text-slate-600 mb-8 leading-relaxed text-sm sm:text-base">
-                        Our team of dedicated professionals works tirelessly to ensure that whether you are buying your first home, expanding your commercial footprint, or managing a high-yield portfolio, your journey is secure, seamless, and deeply rewarding.
+                    <p class="text-slate-600 mb-6 leading-relaxed text-sm sm:text-base">
+                        We hold official registration as a <strong>DHA Bahawalpur Registered Dealer (Registration #15)</strong>, boasting an audited <strong>5-Star Rating</strong> in the published DHA rating lists. Under the leadership of <strong>Husnain Izhar Malik Kamran (CEO)</strong> and registered dealer contact <strong>Izhaar Hussain Khan</strong>, our team guarantees transparent title checks, legitimate file transfers, and direct negotiation without artificial markups.
                     </p>
+                    <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200/80 mb-8">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-primary text-xl"></i>
+                            <div>
+                                <span class="text-xs text-slate-500 uppercase font-bold block">Official Helpline & WhatsApp</span>
+                                <a href="tel:03036448400" class="text-lg font-bold text-slate-900 hover:text-primary transition">0303-6448400</a>
+                                <span class="text-xs text-slate-500 ml-2">(+92 303 6448400)</span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="flex flex-wrap items-center gap-4">
-                        <a href="contact.html" class="bg-primary text-white font-bold px-8 py-3.5 rounded-xl hover:bg-primaryHover transition shadow-lg shadow-indigo-500/25 flex items-center gap-2">
-                            Get in Touch <i class="fa-solid fa-arrow-right"></i>
+                        <a href="contact.html" class="bg-primary text-white font-bold px-8 py-3.5 rounded-xl hover:bg-primaryHover transition shadow-lg shadow-indigo-500/25 flex items-center gap-2 text-sm">
+                            Visit Our Cantt Office <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                        <a href="property.html" class="bg-white border-2 border-slate-200 text-slate-700 font-bold px-8 py-3.5 rounded-xl hover:border-primary hover:text-primary transition">
-                            View All Properties
+                        <a href="property.html" class="bg-white border-2 border-slate-200 text-slate-700 font-bold px-8 py-3.5 rounded-xl hover:border-primary hover:text-primary transition text-sm">
+                            Browse Listings
                         </a>
                     </div>
                 </div>
@@ -132,31 +158,148 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
-                    <div class="text-4xl md:text-5xl font-extrabold text-primary mb-2">15+</div>
-                    <p class="text-slate-600 font-medium text-sm">Years of Experience</p>
+                    <div class="text-4xl md:text-5xl font-extrabold text-primary mb-2">Reg #15</div>
+                    <p class="text-slate-600 font-medium text-sm">DHA Bahawalpur Registration</p>
                 </div>
                 <div>
-                    <div class="text-4xl md:text-5xl font-extrabold text-primary mb-2">2.5k+</div>
-                    <p class="text-slate-600 font-medium text-sm">Properties Sold</p>
+                    <div class="text-4xl md:text-5xl font-extrabold text-amber-600 mb-2">5-Star</div>
+                    <p class="text-slate-600 font-medium text-sm">Published DHA Record Rating</p>
                 </div>
                 <div>
-                    <div class="text-4xl md:text-5xl font-extrabold text-primary mb-2">98%</div>
-                    <p class="text-slate-600 font-medium text-sm">Client Satisfaction</p>
+                    <div class="text-4xl md:text-5xl font-extrabold text-primary mb-2">7+</div>
+                    <p class="text-slate-600 font-medium text-sm">Prime Bahawalpur Societies</p>
                 </div>
                 <div>
-                    <div class="text-4xl md:text-5xl font-extrabold text-primary mb-2">45+</div>
-                    <p class="text-slate-600 font-medium text-sm">Certified Agents</p>
+                    <div class="text-4xl md:text-5xl font-extrabold text-emerald-600 mb-2">100%</div>
+                    <p class="text-slate-600 font-medium text-sm">Transparent Dealings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">Our Comprehensive Services</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Complete Real Estate Solutions in Bahawalpur</h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    From authorized DHA plot files to completed turnkey luxury villas and commercial rental assets, City Property Links offers end-to-end guidance.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1. DHA Properties & Files -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-primary transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">DHA Bahawalpur Properties</h3>
+                        <p class="text-xs text-primary font-bold uppercase tracking-wider mb-3">DHA Registered Dealer #15 (5-Star)</p>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Official allocation files, 5 Marla, 10 Marla, 1 Kanal, and 2 Kanal residential & commercial plots with direct DHA transfer office facilitation.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 text-xs font-semibold text-slate-500">
+                        Dealer Contact: Izhaar Hussain Khan
+                    </div>
+                </div>
+
+                <!-- 2. Residential Properties & Houses -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-primary transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Residential Properties</h3>
+                        <p class="text-xs text-primary font-bold uppercase tracking-wider mb-3">Model Town, Cantt & Satellite Town</p>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Newly constructed designer houses, traditional family homes, and executive residences in high-demand residential sectors across Bahawalpur.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 text-xs font-semibold text-slate-500">
+                        Houses for Sale & Ready Possession
+                    </div>
+                </div>
+
+                <!-- 3. Commercial Properties & Plazas -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-primary transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Commercial Properties</h3>
+                        <p class="text-xs text-primary font-bold uppercase tracking-wider mb-3">Airport Road & Commercial Centers</p>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Multi-storey commercial plazas, corporate office floors, retail shops near Meezan Bank, and high-yield income generating rental assets.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 text-xs font-semibold text-slate-500">
+                        Advisor: Muhammad Saeed
+                    </div>
+                </div>
+
+                <!-- 4. Houses for Sale & Rent -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-primary transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-key"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Houses for Sale & Rent</h3>
+                        <p class="text-xs text-primary font-bold uppercase tracking-wider mb-3">Rental & Sales Inventory</p>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Comprehensive rental agreements, tenant vetting, and transparent buy/sell closings for both local clients and overseas property owners.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 text-xs font-semibold text-slate-500">
+                        Transparent Tenancy Agreements
+                    </div>
+                </div>
+
+                <!-- 5. Plots & Commercial Plots -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-primary transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-map"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Plots & Commercial Plots</h3>
+                        <p class="text-xs text-primary font-bold uppercase tracking-wider mb-3">Verified Societies</p>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Clear title plots in Khayaban-e-Ali Housing Society, Yazman Road, Noor Mahal Road, and Satellite Town with genuine market valuations.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 text-xs font-semibold text-slate-500">
+                        Consultant: Izhar Balouch
+                    </div>
+                </div>
+
+                <!-- 6. Property Investment & Consultation -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-primary transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Investment & Consultation</h3>
+                        <p class="text-xs text-primary font-bold uppercase tracking-wider mb-3">Executive Advisory</p>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Strategic capital allocation, market timing in DHA Bahawalpur sectors, portfolio management, and complete legal documentation support.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 text-xs font-semibold text-slate-500">
+                        CEO: Husnain Izhar Malik Kamran
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Core Values Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-slate-50 border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">Our Foundation</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Core Values</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Core Principles of City Property Links</h2>
                 <p class="text-slate-600 text-sm sm:text-base">We operate on strict ethical principles that safeguard our clients' hard-earned capital and deliver predictable success.</p>
             </div>
 
@@ -166,17 +309,17 @@
                     <div class="w-16 h-16 bg-indigo-50 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
                         <i class="fa-solid fa-handshake-angle"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Trust & Integrity</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm">We believe in radical transparency. No concealed costs, no inflated market claims—just honest, verified data you can depend upon.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Trust & Transparency</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">We believe in radical transparency. No concealed costs, no inflated market claims—just honest, verified data and official registration records you can rely upon.</p>
                 </div>
 
                 <!-- Value 2 -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition duration-300 group">
-                    <div class="w-16 h-16 bg-indigo-50 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
-                        <i class="fa-solid fa-ranking-star"></i>
+                    <div class="w-16 h-16 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-amber-500 group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-award"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Uncompromising Excellence</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm">We strive for perfection in every transaction. From digital 4K property walkthroughs to high-stakes closing negotiations, we deliver masterclass results.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">DHA Accredited Standards</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">As DHA Bahawalpur Registered Dealer #15 with a 5-Star published rating, we adhere strictly to authority protocols and transfer procedures.</p>
                 </div>
 
                 <!-- Value 3 -->
@@ -185,20 +328,23 @@
                         <i class="fa-solid fa-users"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Client-Centric Dedication</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm">Your aspirations lead our strategy. We listen with care, tailor solutions to your timeline, and advocate firmly on your behalf every step of the way.</p>
+                    <p class="text-slate-600 leading-relaxed text-sm">Your aspirations lead our strategy. We listen with care, offer personalized on-ground inspections, and assist overseas Pakistanis with full peace of mind.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Leadership Spotlight -->
-    <section class="py-16 bg-slate-50 border-t border-slate-100">
+    <section class="py-16 bg-white border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4">Guided by Proven Leaders</h2>
-            <p class="text-slate-600 text-sm max-w-xl mx-auto mb-10">Our management team brings decades of high-level development, institutional finance, and client advocacy experience.</p>
-            <div class="flex justify-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Meet the City Property Links Team</h2>
+            <p class="text-slate-600 text-sm max-w-xl mx-auto mb-10">Led by Husnain Izhar Malik Kamran (CEO), Izhaar Hussain Khan (Registered Dealer), and our senior Bahawalpur consultants.</p>
+            <div class="flex justify-center gap-4">
                 <a href="agents.html" class="bg-primary hover:bg-primaryHover text-white px-8 py-3.5 rounded-xl font-bold text-sm shadow-md transition flex items-center gap-2">
-                    Meet Our Entire Team <i class="fa-solid fa-arrow-right"></i>
+                    View Team & Roster <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="https://wa.me/923036448400" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3.5 rounded-xl font-bold text-sm shadow-md transition flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
                 </a>
             </div>
         </div>
@@ -212,11 +358,14 @@
                 <div>
                     <a href="index.html" class="flex items-center gap-2 mb-6 text-white">
                         <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                            <i class="fa-solid fa-building-user text-sm"></i>
+                            <i class="fa-solid fa-building-shield text-sm"></i>
                         </div>
-                        <span class="font-bold text-xl tracking-tight">Haven Estates</span>
+                        <span class="font-bold text-xl tracking-tight">City Property Links</span>
                     </a>
-                    <p class="text-sm leading-relaxed mb-6">Your trusted partner in finding premium residential and commercial properties. We make real estate simple and transparent.</p>
+                    <p class="text-sm leading-relaxed mb-4">City Property Links provides real estate services in Bahawalpur, helping clients explore residential and commercial property opportunities. Focus on transparent dealing and professional guidance.</p>
+                    <span class="inline-block text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2.5 py-1 rounded-full">
+                        DHA Bahawalpur Reg #15 • 5-Star Rated
+                    </span>
                 </div>
                 
                 <!-- Links -->
@@ -226,47 +375,53 @@
                         <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
                         <li><a href="property.html?purpose=For+Sale" class="hover:text-primary transition">Properties for Sale</a></li>
                         <li><a href="property.html?purpose=For+Rent" class="hover:text-primary transition">Properties for Rent</a></li>
-                        <li><a href="agents.html" class="hover:text-primary transition">Our Agents</a></li>
+                        <li><a href="property.html?location=DHA+Bahawalpur" class="hover:text-primary transition">DHA Bahawalpur Listings</a></li>
+                        <li><a href="agents.html" class="hover:text-primary transition">Our Team</a></li>
                         <li><a href="about.html" class="hover:text-primary transition">About Us</a></li>
                         <li><a href="contact.html" class="hover:text-primary transition">Contact Us</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact -->
+                <!-- Contact Details -->
                 <div>
-                    <h4 class="font-bold text-white mb-6">Contact Us</h4>
+                    <h4 class="font-bold text-white mb-6">Contact Bahawalpur Cantt</h4>
                     <ul class="space-y-4 text-sm">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-location-dot mt-1 text-primary"></i>
-                            <span>123 Estate Blvd, Suite 100</span>
+                            <span>Office #9, Al-Madina Commercial Center, Airport Road, near Meezan Bank, Bahawalpur Cantt</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i class="fa-solid fa-phone text-primary"></i>
-                            <a href="tel:+18004884066" class="hover:text-primary transition">+1 (800) 488-4066</a>
+                            <a href="tel:03036448400" class="hover:text-primary transition font-bold text-white">0303-6448400</a>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope text-primary"></i>
-                            <a href="mailto:info@havenestates.com" class="hover:text-primary transition">info@havenestates.com</a>
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                            <a href="https://wa.me/923036448400" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition font-bold text-emerald-400">+92 303 6448400</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-id-badge text-amber-400"></i>
+                            <span class="text-xs">DHA Registered Dealer Contact: <strong>Izhaar Hussain Khan</strong></span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Newsletter -->
+                <!-- Newsletter / Consultation -->
                 <div>
-                    <h4 class="font-bold text-white mb-6">Newsletter</h4>
-                    <p class="text-sm mb-4">Subscribe for the latest property updates.</p>
+                    <h4 class="font-bold text-white mb-6">Stay Updated</h4>
+                    <p class="text-sm mb-4">Receive regular updates on DHA Bahawalpur rates, plot files, and new residential launches.</p>
                     <form class="flex" data-newsletter>
-                        <input type="email" placeholder="Email Address" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-l-xl focus:outline-none focus:border-primary text-sm text-white">
+                        <input type="email" placeholder="Your Phone or Email" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-l-xl focus:outline-none focus:border-primary text-sm text-white">
                         <button type="submit" class="bg-primary px-4 py-2.5 rounded-r-xl hover:bg-primaryHover transition text-white"><i class="fa-solid fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
             
             <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-                <p>© 2026 Haven Estates. Designed & Developed by Qasim Ali.</p>
+                <p>© 2026 City Property Links. DHA Bahawalpur Registered Dealer #15 (5-Star Rated). All Rights Reserved.</p>
                 <div class="flex gap-4">
-                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/923036448400" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="tel:03036448400" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition" title="Call Us"><i class="fa-solid fa-phone"></i></a>
+                    <a href="contact.html" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition" title="Office Location"><i class="fa-solid fa-map-location-dot"></i></a>
                 </div>
             </div>
         </div>

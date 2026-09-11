@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Haven Estates</title>
+    <title>Contact Us | City Property Links (DHA Reg #15 Bahawalpur)</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -37,31 +37,40 @@
 <body class="font-sans text-slate-800 bg-slate-50 antialiased flex flex-col min-h-screen">
 
     <!-- Navbar -->
-    <nav class="fixed w-full bg-white/95 backdrop-blur-md z-50 shadow-sm transition-all duration-300">
+    <nav class="fixed w-full bg-white/95 backdrop-blur-md z-50 shadow-sm transition-all duration-300 border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center gap-2">
-                        <div class="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center text-xl shadow-lg">
-                            <i class="fa-solid fa-building-user"></i>
+                    <a href="index.html" class="flex items-center gap-3">
+                        <div class="w-11 h-11 bg-primary text-white rounded-xl flex items-center justify-center text-xl shadow-lg shadow-indigo-500/20">
+                            <i class="fa-solid fa-building-shield"></i>
                         </div>
-                        <span class="font-bold text-2xl text-slate-900 tracking-tight">Haven Estates</span>
+                        <div>
+                            <span class="font-bold text-xl text-slate-900 tracking-tight block leading-tight">City Property Links</span>
+                            <span class="text-[10px] font-bold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded inline-block">DHA Reg #15 • 5★</span>
+                        </div>
                     </a>
                 </div>
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-7">
                     <a href="index.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">Home</a>
                     <a href="property.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">Properties</a>
-                    <a href="agents.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">Agents</a>
-                    <a href="about.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">About</a>
+                    <a href="agents.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">Our Team</a>
+                    <a href="about.html" class="nav-link text-slate-600 hover:text-primary transition font-medium">About Us</a>
                     <a href="contact.html" class="nav-link text-primary font-semibold transition">Contact</a>
-                    <button data-open-add-property class="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-primaryHover hover:shadow-lg transition duration-300 flex items-center gap-2">
+                    <a href="https://wa.me/923036448400" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 font-bold text-sm flex items-center gap-1.5 bg-emerald-50 px-3 py-2 rounded-xl border border-emerald-200 transition">
+                        <i class="fa-brands fa-whatsapp text-base"></i> 0303-6448400
+                    </a>
+                    <button data-open-add-property class="bg-primary text-white px-5 py-2.5 rounded-full font-semibold hover:bg-primaryHover hover:shadow-lg transition duration-300 flex items-center gap-2 text-sm">
                         <i class="fa-solid fa-plus text-xs"></i> Add Property
                     </button>
                 </div>
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
+                <div class="md:hidden flex items-center gap-2">
+                    <a href="https://wa.me/923036448400" target="_blank" rel="noopener noreferrer" class="text-emerald-600 bg-emerald-50 p-2 rounded-xl text-lg border border-emerald-200">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
                     <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary text-2xl p-2">
                         <i class="fa-solid fa-bars"></i>
                     </button>
@@ -72,9 +81,12 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 pt-3 pb-6 space-y-3 shadow-xl">
             <a href="index.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">Home</a>
             <a href="property.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">Properties</a>
-            <a href="agents.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">Agents</a>
-            <a href="about.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">About</a>
+            <a href="agents.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">Our Team</a>
+            <a href="about.html" class="nav-link block py-2.5 text-slate-600 hover:text-primary font-medium">About Us</a>
             <a href="contact.html" class="nav-link block py-2.5 text-primary font-semibold">Contact</a>
+            <a href="https://wa.me/923036448400" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 text-emerald-700 bg-emerald-50 rounded-xl font-bold flex items-center justify-center gap-2 border border-emerald-200">
+                <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp: 0303-6448400
+            </a>
             <button data-open-add-property class="w-full mt-2 bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:bg-primaryHover transition flex items-center justify-center gap-2">
                 <i class="fa-solid fa-plus text-xs"></i> Add Property
             </button>
@@ -84,12 +96,16 @@
     <!-- Page Header -->
     <section class="relative pt-32 pb-20 bg-slate-900 overflow-hidden">
         <div class="absolute inset-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="City Background" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Bahawalpur Office Background" class="w-full h-full object-cover">
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="text-indigo-400 font-bold tracking-wider uppercase text-xs mb-3 block">Get In Touch</span>
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">We're Here to Help You</h1>
-            <p class="text-lg text-slate-300 max-w-2xl mx-auto">Whether you're looking to buy, sell, lease, or consult on an investment strategy, our concierge team is always available.</p>
+            <span class="text-amber-300 font-bold tracking-wider uppercase text-xs mb-3 block">
+                <i class="fa-solid fa-certificate text-amber-400 mr-1.5"></i> DHA Bahawalpur Registered Dealer #15 (5-Star)
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Contact City Property Links</h1>
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                Whether you're looking to buy, sell, lease or verify property in Bahawalpur, our team is at your service at our Airport Road Cantt office.
+            </p>
         </div>
     </section>
 
@@ -99,12 +115,12 @@
             <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
                 
                 <!-- Contact Information -->
-                <div class="lg:col-span-2 space-y-8">
+                <div class="lg:col-span-2 space-y-6">
                     <div>
                         <span class="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">Direct Communication</span>
-                        <h2 class="text-3xl font-bold text-slate-900 mb-4">Corporate Headquarters</h2>
+                        <h2 class="text-3xl font-bold text-slate-900 mb-3">Bahawalpur Cantt Office</h2>
                         <p class="text-slate-600 leading-relaxed text-sm">
-                            Visit our offices for a private consultation or reach out through our priority channels below.
+                            Visit our office for property file transfers, legal title verification, or in-person consultation on DHA and Bahawalpur sectors.
                         </p>
                     </div>
 
@@ -114,9 +130,9 @@
                             <i class="fa-solid fa-map-location-dot"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-base mb-1">Corporate Office</h4>
-                            <p class="text-slate-700 font-medium text-sm">Haven Estates Real Estate</p>
-                            <p class="text-slate-500 text-xs leading-relaxed mt-0.5">123 Estate Blvd, Suite 100<br>Central Business District<br>United States</p>
+                            <h4 class="font-bold text-slate-900 text-sm mb-1">Office Location</h4>
+                            <p class="text-slate-800 font-semibold text-sm">City Property Links</p>
+                            <p class="text-slate-600 text-xs leading-relaxed mt-1">Office #9, Al-Madina Commercial Center, Airport Road, near Meezan Bank, Bahawalpur Cantt</p>
                         </div>
                     </div>
 
@@ -126,74 +142,86 @@
                             <i class="fa-solid fa-phone-volume"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-base mb-1">Direct Helpline</h4>
-                            <a href="tel:+18004884066" class="text-slate-700 hover:text-primary transition font-semibold text-sm">+1 (800) 488-4066</a>
-                            <p class="text-xs text-slate-400 mt-1">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                            <h4 class="font-bold text-slate-900 text-sm mb-1">Direct Helpline</h4>
+                            <a href="tel:03036448400" class="text-primary hover:underline font-bold text-base block">0303-6448400</a>
+                            <p class="text-xs text-slate-400 mt-1">Mon - Sat: 9:00 AM - 8:00 PM</p>
                         </div>
                     </div>
 
-                    <!-- Email Card -->
-                    <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                        <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-primary flex-shrink-0 text-xl">
-                            <i class="fa-solid fa-envelope-open-text"></i>
+                    <!-- WhatsApp Card -->
+                    <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-2xl border border-emerald-100">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 flex-shrink-0 text-2xl">
+                            <i class="fa-brands fa-whatsapp"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-base mb-1">Email Inquiries</h4>
-                            <a href="mailto:info@havenestates.com" class="text-slate-700 hover:text-primary transition font-semibold text-sm">info@havenestates.com</a>
-                            <p class="text-xs text-slate-400 mt-1">Average response time: within 2 hours</p>
+                            <h4 class="font-bold text-slate-900 text-sm mb-1">WhatsApp Quick Support</h4>
+                            <a href="https://wa.me/923036448400" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline font-bold text-base block">+92 303 6448400</a>
+                            <p class="text-xs text-emerald-600 mt-1">Direct chat for photos, map locations & rate updates</p>
                         </div>
+                    </div>
+
+                    <!-- DHA Dealer Desk Card -->
+                    <div class="p-5 bg-amber-50/70 rounded-2xl border border-amber-200">
+                        <h4 class="font-bold text-amber-900 text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-award text-amber-600"></i> DHA Bahawalpur Dealer Desk
+                        </h4>
+                        <p class="text-xs text-slate-700 leading-relaxed">
+                            <strong>DHA Registration:</strong> 15 (5-Star Published Rating)<br>
+                            <strong>Registered Dealer Contact:</strong> Izhaar Hussain Khan<br>
+                            <strong>CEO:</strong> Husnain Izhar Malik Kamran
+                        </p>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
                 <div class="lg:col-span-3">
                     <div class="bg-slate-50 border border-slate-100 rounded-3xl p-8 md:p-10 shadow-sm">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Send Us a Direct Message</h3>
-                        <p class="text-slate-500 text-sm mb-8">Fill in your requirements below and our senior advisor will reach out to you.</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Send Us an Inquiry</h3>
+                        <p class="text-slate-500 text-sm mb-8">Fill in your requirements below and our senior advisor will contact you promptly.</p>
                         
                         <form id="contact-page-form" class="space-y-5">
                             <div class="grid md:grid-cols-2 gap-5">
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">First Name *</label>
-                                    <input type="text" name="firstName" placeholder="John" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition bg-white text-sm" required>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your Name *</label>
+                                    <input type="text" name="name" placeholder="Full Name" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition bg-white text-sm" required>
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Last Name *</label>
-                                    <input type="text" name="lastName" placeholder="Doe" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition bg-white text-sm" required>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Phone / Mobile *</label>
+                                    <input type="tel" name="phone" placeholder="0300-1234567" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition bg-white text-sm" required>
                                 </div>
                             </div>
                             
                             <div class="grid md:grid-cols-2 gap-5">
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Email Address *</label>
-                                    <input type="email" name="email" placeholder="john@example.com" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition bg-white text-sm" required>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Email Address</label>
+                                    <input type="email" name="email" placeholder="name@example.com" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition bg-white text-sm">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Phone Number</label>
-                                    <input type="tel" name="phone" placeholder="+1 (800) 488-4066" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition bg-white text-sm">
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Interested Property Type</label>
+                                    <select name="interest" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition bg-white text-slate-700 text-sm cursor-pointer">
+                                        <option value="DHA Bahawalpur Plot / File">DHA Bahawalpur Plot / File</option>
+                                        <option value="House for Sale (Model Town / Cantt)">House for Sale (Model Town / Cantt)</option>
+                                        <option value="Commercial Plaza / Shop">Commercial Plaza / Shop</option>
+                                        <option value="House for Rent">House for Rent</option>
+                                        <option value="Selling My Property in Bahawalpur">Selling My Property in Bahawalpur</option>
+                                        <option value="Investment Advisory">Investment Advisory</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">I am interested in</label>
-                                <select name="interest" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition bg-white text-slate-700 text-sm cursor-pointer">
-                                    <option value="Buying a Property">Buying a Property</option>
-                                    <option value="Selling a Property">Selling a Property</option>
-                                    <option value="Renting a Property">Renting a Property</option>
-                                    <option value="Investment Opportunities">Investment Opportunities</option>
-                                    <option value="Joining Haven Estates as an Agent">Joining Haven Estates as an Agent</option>
-                                    <option value="General Inquiry">General Inquiry</option>
-                                </select>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your Detailed Requirement *</label>
+                                <textarea name="message" rows="4" placeholder="Mention preferred area (e.g. DHA, Model Town, Airport Road), budget, size (5 Marla, 10 Marla, 1 Kanal), and any specific needs..." class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition bg-white resize-none text-sm" required></textarea>
                             </div>
 
-                            <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your Detailed Message *</label>
-                                <textarea name="message" rows="4" placeholder="Tell us about your target location, budget, preferred property type, and timeline..." class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition bg-white resize-none text-sm" required></textarea>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <button type="submit" class="flex-1 bg-primary text-white font-bold py-4 rounded-xl hover:bg-primaryHover transition duration-300 shadow-lg shadow-indigo-500/25 flex justify-center items-center gap-2 text-sm">
+                                    <i class="fa-solid fa-paper-plane"></i> Submit Inquiry
+                                </button>
+                                <a href="https://wa.me/923036448400" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-emerald-700 transition flex justify-center items-center gap-2 text-sm">
+                                    <i class="fa-brands fa-whatsapp text-base"></i> Direct WhatsApp
+                                </a>
                             </div>
-
-                            <button type="submit" class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primaryHover transition duration-300 shadow-lg shadow-indigo-500/25 flex justify-center items-center gap-2 text-sm">
-                                <i class="fa-solid fa-paper-plane"></i> Send Message Now
-                            </button>
                         </form>
                     </div>
                 </div>
@@ -206,53 +234,53 @@
     <section class="py-16 bg-slate-50 border-t border-slate-100">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">Help Center</span>
+                <span class="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">Helpful Guidance</span>
                 <h2 class="text-3xl font-bold text-slate-900">Frequently Asked Questions</h2>
             </div>
 
             <div class="space-y-4">
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-5 shadow-sm cursor-pointer faq-item">
                     <div class="flex justify-between items-center font-bold text-slate-900 text-sm sm:text-base">
-                        <span>How do I schedule a physical or virtual property tour?</span>
+                        <span>Where is City Property Links located in Bahawalpur?</span>
                         <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
                     </div>
                     <p class="text-slate-600 text-xs sm:text-sm mt-3 leading-relaxed hidden faq-answer">
-                        You can click "View Details" on any listing and click "Contact Agent", or use our direct contact form. Our assigned realtor will schedule a walkthrough at your preferred date and time, with live 4K video walk options for international buyers.
+                        Our head office is located at <strong>Office #9, Al-Madina Commercial Center, Airport Road, near Meezan Bank, Bahawalpur Cantt</strong>. Clients are welcome to visit during business hours (Monday to Saturday, 9:00 AM - 8:00 PM).
                     </p>
                 </div>
 
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-5 shadow-sm cursor-pointer faq-item">
                     <div class="flex justify-between items-center font-bold text-slate-900 text-sm sm:text-base">
-                        <span>Are all listings verified for clear legal title and documentation?</span>
+                        <span>Is City Property Links an official DHA Bahawalpur registered dealer?</span>
                         <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
                     </div>
                     <p class="text-slate-600 text-xs sm:text-sm mt-3 leading-relaxed hidden faq-answer">
-                        Yes. Every single property on Haven Estates passes our strict legal vetting process, ensuring verified allotment letters, clear registry deeds, and zero encumbrances before publication.
+                        Yes. City Property Links holds <strong>DHA Bahawalpur Registration #15</strong> with an audited <strong>5-Star Rating</strong> in the published DHA rating list. Our registered dealer contact is <strong>Izhaar Hussain Khan</strong>.
                     </p>
                 </div>
 
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-5 shadow-sm cursor-pointer faq-item">
                     <div class="flex justify-between items-center font-bold text-slate-900 text-sm sm:text-base">
-                        <span>Can I list my own property on Haven Estates?</span>
+                        <span>How can overseas Pakistanis buy or sell property through your agency?</span>
                         <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
                     </div>
                     <p class="text-slate-600 text-xs sm:text-sm mt-3 leading-relaxed hidden faq-answer">
-                        Absolutely! Just click the "Add Property" button in the navigation bar on any page, fill in your property details and photos, and submit. Your property will be listed instantly across our platform.
+                        Overseas Pakistanis can contact us directly on WhatsApp at <strong>+92 303 6448400</strong>. We provide live video walkthroughs, authenticated rate evaluations, and guide you step-by-step through DHA Bahawalpur power-of-attorney and transfer procedures.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Map Section -->
+    <!-- Map Section (Airport Road Bahawalpur Cantt) -->
     <section class="h-96 w-full bg-slate-200 relative">
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.062402120464!2d-73.97444748459353!3d40.7606709793264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258fa1a80d4bd%3A0xc682255476a6b8!2s575%20Madison%20Ave%2C%20New%20York%2C%20NY%2010022%2C%20USA!5e0!3m2!1sen!2s!4v1684890000000!5m2!1sen!2s" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13812.551390467556!2d71.693444!3d29.385556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b90c0b8ad2a71%3A0xbcf4a7541e264627!2sAirport%20Rd%2C%20Bahawalpur%2C%20Punjab!5e0!3m2!1sen!2s!4v1684890000000!5m2!1sen!2s" 
             class="absolute top-0 left-0 w-full h-full border-0 grayscale hover:grayscale-0 transition duration-500" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
-            title="Office Location Map">
+            title="City Property Links Bahawalpur Location Map">
         </iframe>
     </section>
 
@@ -264,11 +292,14 @@
                 <div>
                     <a href="index.html" class="flex items-center gap-2 mb-6 text-white">
                         <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                            <i class="fa-solid fa-building-user text-sm"></i>
+                            <i class="fa-solid fa-building-shield text-sm"></i>
                         </div>
-                        <span class="font-bold text-xl tracking-tight">Haven Estates</span>
+                        <span class="font-bold text-xl tracking-tight">City Property Links</span>
                     </a>
-                    <p class="text-sm leading-relaxed mb-6">Your trusted partner in finding premium residential and commercial properties. We make real estate simple and transparent.</p>
+                    <p class="text-sm leading-relaxed mb-4">City Property Links provides real estate services in Bahawalpur, helping clients explore residential and commercial property opportunities. Focus on transparent dealing and professional guidance.</p>
+                    <span class="inline-block text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2.5 py-1 rounded-full">
+                        DHA Bahawalpur Reg #15 • 5-Star Rated
+                    </span>
                 </div>
                 
                 <!-- Links -->
@@ -278,47 +309,53 @@
                         <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
                         <li><a href="property.html?purpose=For+Sale" class="hover:text-primary transition">Properties for Sale</a></li>
                         <li><a href="property.html?purpose=For+Rent" class="hover:text-primary transition">Properties for Rent</a></li>
-                        <li><a href="agents.html" class="hover:text-primary transition">Our Agents</a></li>
+                        <li><a href="property.html?location=DHA+Bahawalpur" class="hover:text-primary transition">DHA Bahawalpur Listings</a></li>
+                        <li><a href="agents.html" class="hover:text-primary transition">Our Team</a></li>
                         <li><a href="about.html" class="hover:text-primary transition">About Us</a></li>
                         <li><a href="contact.html" class="hover:text-primary transition">Contact Us</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact -->
+                <!-- Contact Details -->
                 <div>
-                    <h4 class="font-bold text-white mb-6">Contact Us</h4>
+                    <h4 class="font-bold text-white mb-6">Contact Bahawalpur Cantt</h4>
                     <ul class="space-y-4 text-sm">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-location-dot mt-1 text-primary"></i>
-                            <span>123 Estate Blvd, Suite 100</span>
+                            <span>Office #9, Al-Madina Commercial Center, Airport Road, near Meezan Bank, Bahawalpur Cantt</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i class="fa-solid fa-phone text-primary"></i>
-                            <a href="tel:+18004884066" class="hover:text-primary transition">+1 (800) 488-4066</a>
+                            <a href="tel:03036448400" class="hover:text-primary transition font-bold text-white">0303-6448400</a>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope text-primary"></i>
-                            <a href="mailto:info@havenestates.com" class="hover:text-primary transition">info@havenestates.com</a>
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                            <a href="https://wa.me/923036448400" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition font-bold text-emerald-400">+92 303 6448400</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-id-badge text-amber-400"></i>
+                            <span class="text-xs">DHA Registered Dealer Contact: <strong>Izhaar Hussain Khan</strong></span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Newsletter -->
+                <!-- Newsletter / Consultation -->
                 <div>
-                    <h4 class="font-bold text-white mb-6">Newsletter</h4>
-                    <p class="text-sm mb-4">Subscribe for the latest property updates.</p>
+                    <h4 class="font-bold text-white mb-6">Stay Updated</h4>
+                    <p class="text-sm mb-4">Receive regular updates on DHA Bahawalpur rates, plot files, and new residential launches.</p>
                     <form class="flex" data-newsletter>
-                        <input type="email" placeholder="Email Address" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-l-xl focus:outline-none focus:border-primary text-sm text-white">
+                        <input type="email" placeholder="Your Phone or Email" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-l-xl focus:outline-none focus:border-primary text-sm text-white">
                         <button type="submit" class="bg-primary px-4 py-2.5 rounded-r-xl hover:bg-primaryHover transition text-white"><i class="fa-solid fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
             
             <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-                <p>© 2026 Haven Estates. Designed & Developed by Qasim Ali.</p>
+                <p>© 2026 City Property Links. DHA Bahawalpur Registered Dealer #15 (5-Star Rated). All Rights Reserved.</p>
                 <div class="flex gap-4">
-                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/923036448400" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="tel:03036448400" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition" title="Call Us"><i class="fa-solid fa-phone"></i></a>
+                    <a href="contact.html" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition" title="Office Location"><i class="fa-solid fa-map-location-dot"></i></a>
                 </div>
             </div>
         </div>
@@ -329,41 +366,30 @@
     <script src="app.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // FAQ accordion logic
+            // FAQ accordion toggle
             document.querySelectorAll('.faq-item').forEach(item => {
                 item.addEventListener('click', () => {
                     const answer = item.querySelector('.faq-answer');
                     const icon = item.querySelector('.fa-chevron-down');
-                    const isHidden = answer.classList.contains('hidden');
-                    
-                    if (isHidden) {
-                        answer.classList.remove('hidden');
-                        icon.classList.add('rotate-180');
-                    } else {
-                        answer.classList.add('hidden');
-                        icon.classList.remove('rotate-180');
+                    if (answer) {
+                        answer.classList.toggle('hidden');
+                        icon.classList.toggle('rotate-180');
                     }
                 });
             });
 
-            // Contact Form handler
+            // Contact page form submission
             const form = document.getElementById('contact-page-form');
             if (form) {
                 form.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    const formData = new FormData(form);
-                    const inquiry = {
-                        type: 'Main Contact Form',
-                        senderName: `${formData.get('firstName')} ${formData.get('lastName')}`,
-                        senderEmail: formData.get('email'),
-                        senderPhone: formData.get('phone'),
-                        interest: formData.get('interest'),
-                        message: formData.get('message')
-                    };
+                    const name = form.querySelector('[name="name"]')?.value || 'Client';
+                    const phone = form.querySelector('[name="phone"]')?.value || '';
+                    const message = form.querySelector('[name="message"]')?.value || '';
+                    const interest = form.querySelector('[name="interest"]')?.value || '';
 
-                    HavenDB.saveInquiry(inquiry);
+                    HavenApp.showNotification(`Thank you, ${name}! Your inquiry regarding "${interest}" has been received. Our team will contact you at ${phone} promptly.`, 'success');
                     form.reset();
-                    HavenApp.showToast(`Thank you, ${inquiry.senderName}! Your message has been sent successfully. A senior representative will contact you shortly.`, 'success');
                 });
             }
         });

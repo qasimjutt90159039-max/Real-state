@@ -1,6 +1,6 @@
 /**
- * Haven Estates - Global App Controller
- * Handles Modals, Notifications, Global Navbar, Footer, and Common UI
+ * City Property Links — Global App Controller
+ * Authorized DHA Bahawalpur Registered Dealer #15 | 5-Star Rated
  */
 
 const HavenApp = {
@@ -12,7 +12,7 @@ const HavenApp = {
         this.setupGlobalEventListeners();
     },
 
-    // Show stylish floating toast notification
+    // Show floating toast notification
     showToast: function(message, type = 'success') {
         let toastContainer = document.getElementById('haven-toast-container');
         if (!toastContainer) {
@@ -26,12 +26,12 @@ const HavenApp = {
         toast.className = `transform transition-all duration-300 translate-y-8 opacity-0 pointer-events-auto flex items-center gap-3 px-5 py-3.5 rounded-2xl shadow-xl text-sm font-medium border ${
             type === 'success' ? 'bg-slate-900 text-white border-slate-800' :
             type === 'error' ? 'bg-red-600 text-white border-red-700' :
-            'bg-indigo-600 text-white border-indigo-700'
+            'bg-emerald-700 text-white border-emerald-800'
         }`;
 
         const icon = type === 'success' ? '<i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>' :
                      type === 'error' ? '<i class="fa-solid fa-circle-exclamation text-red-200 text-lg"></i>' :
-                     '<i class="fa-solid fa-circle-info text-indigo-200 text-lg"></i>';
+                     '<i class="fa-solid fa-circle-info text-emerald-200 text-lg"></i>';
 
         toast.innerHTML = `
             ${icon}
@@ -46,12 +46,10 @@ const HavenApp = {
 
         toastContainer.appendChild(toast);
 
-        // Animate in
         requestAnimationFrame(() => {
             toast.classList.remove('translate-y-8', 'opacity-0');
         });
 
-        // Auto remove
         setTimeout(() => {
             if (toast.parentNode) {
                 toast.classList.add('opacity-0', 'translate-y-4');
@@ -60,7 +58,7 @@ const HavenApp = {
         }, 4000);
     },
 
-    // Inject Add Property, Property Details, and Contact Agent modals into body
+    // Inject Global Modals into DOM
     injectGlobalModals: function() {
         if (document.getElementById('global-modals-container')) return;
 
@@ -70,14 +68,14 @@ const HavenApp = {
             <!-- Add Property Modal -->
             <div id="add-property-modal" class="fixed inset-0 z-[9000] hidden items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm overflow-y-auto">
                 <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl border border-slate-100 overflow-hidden my-8 relative animate-scaleUp">
-                    <div class="px-6 py-5 bg-gradient-to-r from-primary to-indigo-700 text-white flex justify-between items-center">
+                    <div class="px-6 py-5 bg-gradient-to-r from-primary to-indigo-800 text-white flex justify-between items-center">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-xl">
                                 <i class="fa-solid fa-plus"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold">List a New Property</h3>
-                                <p class="text-indigo-100 text-xs">Add your property details to Haven Estates</p>
+                                <p class="text-indigo-100 text-xs">City Property Links — DHA Bahawalpur Reg. #15</p>
                             </div>
                         </div>
                         <button type="button" class="close-modal-btn w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
@@ -88,18 +86,18 @@ const HavenApp = {
                     <form id="add-property-form" class="p-6 md:p-8 space-y-5 max-h-[80vh] overflow-y-auto">
                         <div>
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Property Title *</label>
-                            <input type="text" name="title" required placeholder="e.g. Royal Palm Luxury Villa" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition">
+                            <input type="text" name="title" required placeholder="e.g. 1 Kanal Luxury House, DHA Sector A" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition">
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Property Type *</label>
                                 <select name="type" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition text-slate-700">
-                                    <option value="Villa">Villa</option>
                                     <option value="House">House</option>
-                                    <option value="Apartment">Apartment</option>
-                                    <option value="Commercial">Commercial</option>
                                     <option value="Plot / Land">Plot / Land</option>
+                                    <option value="Commercial">Commercial (Plaza / Shop)</option>
+                                    <option value="Villa">Luxury Villa</option>
+                                    <option value="Apartment">Apartment</option>
                                 </select>
                             </div>
                             <div>
@@ -113,51 +111,65 @@ const HavenApp = {
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Price ($ USD) *</label>
-                                <input type="number" name="price" required min="100" placeholder="e.g. 450000 or 1200" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Area / Society *</label>
+                                <select name="city" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition text-slate-700">
+                                    <option value="DHA Bahawalpur">DHA Bahawalpur</option>
+                                    <option value="Model Town">Model Town</option>
+                                    <option value="Satellite Town">Satellite Town</option>
+                                    <option value="Airport Road">Airport Road</option>
+                                    <option value="Yazman Road">Yazman Road</option>
+                                    <option value="Noor Mahal Road">Noor Mahal Road</option>
+                                    <option value="Khayaban-e-Ali">Khayaban-e-Ali Housing Society</option>
+                                    <option value="Bahawalpur Cantt">Bahawalpur Cantt</option>
+                                </select>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Location / City *</label>
-                                <input type="text" name="location" required placeholder="e.g. DHA Phase 1, Bahawalpur" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Price (PKR) *</label>
+                                <input type="number" name="price" required min="1000" placeholder="e.g. 38500000 or 120000" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition">
                             </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Exact Location / Sector Address *</label>
+                            <input type="text" name="location" required placeholder="e.g. Sector C, DHA Bahawalpur or Block B, Model Town" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition">
                         </div>
 
                         <div class="grid grid-cols-3 gap-3">
                             <div>
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Bedrooms</label>
-                                <input type="number" name="beds" min="0" value="3" class="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
+                                <input type="number" name="beds" min="0" value="4" class="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Bathrooms</label>
-                                <input type="number" name="baths" min="0" value="2" class="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
+                                <input type="number" name="baths" min="0" value="4" class="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Area (sqft)</label>
-                                <input type="number" name="area" min="100" value="2000" class="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Area Size (Marla/Kanal)</label>
+                                <input type="text" name="areaUnit" value="1 Kanal" placeholder="e.g. 1 Kanal or 10 Marla" class="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
                             </div>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Image URL</label>
                             <input type="url" name="image" placeholder="https://images.unsplash.com/photo-..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
-                            <p class="text-[11px] text-slate-400 mt-1">Leave blank to use a premier curated luxury property image automatically.</p>
+                            <p class="text-[11px] text-slate-400 mt-1">Leave blank to use a verified high-resolution property photograph automatically.</p>
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Assigned Agent</label>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Assigned Consultant / Team Member</label>
                             <select name="agentName" id="modal-agent-select" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition text-slate-700">
                                 <!-- Populated dynamically -->
                             </select>
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Description</label>
-                            <textarea name="description" rows="3" placeholder="Highlight key features, architectural highlights, nearby amenities..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition resize-none"></textarea>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Property Description & Highlights</label>
+                            <textarea name="description" rows="3" placeholder="Detail sector location, road width, utilities status, construction quality, possession..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition resize-none"></textarea>
                         </div>
 
                         <div class="pt-2">
                             <button type="submit" class="w-full bg-primary hover:bg-primaryHover text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-indigo-500/25 transition duration-300 flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-cloud-arrow-up"></i> Publish Property
+                                <i class="fa-solid fa-cloud-arrow-up"></i> Publish Listing to City Property Links
                             </button>
                         </div>
                     </form>
@@ -173,7 +185,7 @@ const HavenApp = {
                 </div>
             </div>
 
-            <!-- Contact Agent Modal -->
+            <!-- Contact Agent / Team Modal -->
             <div id="contact-agent-modal" class="fixed inset-0 z-[9000] hidden items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm overflow-y-auto">
                 <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl border border-slate-100 overflow-hidden my-8 relative">
                     <div class="px-6 py-5 bg-slate-900 text-white flex justify-between items-center">
@@ -182,8 +194,8 @@ const HavenApp = {
                                 <i class="fa-solid fa-headset"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-bold">Contact Agent</h3>
-                                <p id="agent-modal-subtext" class="text-slate-300 text-xs">Direct inquiry message</p>
+                                <h3 class="text-lg font-bold">Contact Property Advisor</h3>
+                                <p id="agent-modal-subtext" class="text-slate-300 text-xs">City Property Links — Bahawalpur</p>
                             </div>
                         </div>
                         <button type="button" class="close-modal-btn w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
@@ -201,29 +213,32 @@ const HavenApp = {
 
                         <div>
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Your Full Name *</label>
-                            <input type="text" name="senderName" required placeholder="John Doe" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
+                            <input type="text" name="senderName" required placeholder="e.g. Muhammad Ali" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Your Email *</label>
-                                <input type="email" name="senderEmail" required placeholder="john@example.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Phone / WhatsApp Number *</label>
+                                <input type="tel" name="senderPhone" required placeholder="0300-1234567" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Phone Number</label>
-                                <input type="tel" name="senderPhone" placeholder="+1 (800) 488-4066" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Email Address</label>
+                                <input type="email" name="senderEmail" placeholder="yourname@gmail.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition">
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Your Message *</label>
-                            <textarea name="message" rows="3" required placeholder="I am interested in this listing and would like to schedule a private tour..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition resize-none"></textarea>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Your Inquiry Details *</label>
+                            <textarea name="message" rows="3" required placeholder="I am interested in this property. Please share latest demand, transfer procedure, and schedule a site visit..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary transition resize-none"></textarea>
                         </div>
 
-                        <div class="pt-2">
+                        <div class="pt-2 flex flex-col gap-2.5">
                             <button type="submit" class="w-full bg-primary hover:bg-primaryHover text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-indigo-500/25 transition duration-300 flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i> Send Inquiry
+                                <i class="fa-solid fa-paper-plane"></i> Send Direct Inquiry
                             </button>
+                            <a id="agent-modal-whatsapp-btn" href="https://wa.me/923036448400" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2 text-sm shadow">
+                                <i class="fa-brands fa-whatsapp text-lg"></i> Quick Chat on WhatsApp (0303-6448400)
+                            </a>
                         </div>
                     </form>
                 </div>
@@ -239,16 +254,17 @@ const HavenApp = {
 
     populateAgentSelect: function() {
         const select = document.getElementById('modal-agent-select');
-        if (!select || !window.HavenDB) return;
+        if (!select) return;
+
         const agents = HavenDB.getAgents();
-        select.innerHTML = agents.map(agent => `<option value="${agent.name}">${agent.name} - ${agent.role}</option>`).join('');
+        select.innerHTML = agents.map(agent => 
+            `<option value="${agent.name}">${agent.name} — ${agent.role}</option>`
+        ).join('');
     },
 
     setupModalCloseButtons: function() {
         document.querySelectorAll('.close-modal-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                this.closeAllModals();
-            });
+            btn.addEventListener('click', () => this.closeAllModals());
         });
 
         ['add-property-modal', 'property-details-modal', 'contact-agent-modal'].forEach(id => {
@@ -265,6 +281,15 @@ const HavenApp = {
         });
     },
 
+    openModal: function(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+    },
+
     closeAllModals: function() {
         ['add-property-modal', 'property-details-modal', 'contact-agent-modal'].forEach(id => {
             const modal = document.getElementById(id);
@@ -273,17 +298,7 @@ const HavenApp = {
                 modal.classList.remove('flex');
             }
         });
-        document.body.classList.remove('overflow-hidden');
-    },
-
-    openModal: function(modalId) {
-        this.closeAllModals();
-        const modal = document.getElementById(modalId);
-        if (modal) {
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.classList.add('overflow-hidden');
-        }
+        document.body.style.overflow = '';
     },
 
     openAddPropertyModal: function() {
@@ -300,44 +315,43 @@ const HavenApp = {
             const formData = new FormData(form);
             const agentName = formData.get('agentName');
             const agentObj = HavenDB.getAgentByName(agentName);
-
-            const defaultImages = [
-                "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-                "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-                "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-            ];
-            const chosenImage = formData.get('image')?.trim() || defaultImages[Math.floor(Math.random() * defaultImages.length)];
+            const chosenImage = formData.get('image') || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
 
             const newProp = {
                 title: formData.get('title'),
                 type: formData.get('type'),
                 purpose: formData.get('purpose'),
                 price: Number(formData.get('price')),
+                city: formData.get('city') || 'DHA Bahawalpur',
                 location: formData.get('location'),
-                city: formData.get('location').split(',').pop().trim() || 'Bahawalpur',
                 beds: Number(formData.get('beds')),
                 baths: Number(formData.get('baths')),
-                area: Number(formData.get('area')),
+                area: Number(formData.get('price')) > 5000000 ? 4500 : 2250,
+                areaUnit: formData.get('areaUnit') || '1 Kanal',
+                network: "City Property Links",
+                networkPhone: "0303-6448400",
+                statusBadge: "Verified Listing",
                 image: chosenImage,
                 gallery: [chosenImage],
-                description: formData.get('description') || 'A premier property offering modern comfort and exceptional value in a prime neighborhood.',
-                amenities: ["Prime Location", "Security", "Parking Space", "Modern Fixtures", "Clean Deed"],
+                description: formData.get('description') || `Verified property listing offered by City Property Links (DHA Bahawalpur Registered Dealer #15). Clear legal documentation and immediate transfer readiness.`,
+                amenities: ["DHA Reg #15 Verified", "Clear Registry Deed", "Car Parking", "Electricity & Water Ready", "24/7 Security"],
                 featured: true,
                 agent: {
                     name: agentObj.name,
                     role: agentObj.role,
-                    phone: agentObj.phone,
+                    network: "City Property Links",
+                    phone: "0303-6448400",
+                    phoneLink: "tel:03036448400",
+                    whatsappLink: "https://wa.me/923036448400",
                     email: agentObj.email,
-                    avatar: agentObj.avatar,
-                    avatarImg: agentObj.avatarImg
+                    avatar: agentObj.avatar
                 }
             };
 
             HavenDB.addProperty(newProp);
             form.reset();
             this.closeAllModals();
-            this.showToast('🎉 Property listed successfully! It is now visible on the website.', 'success');
+            this.showToast(`🎉 Property successfully listed with City Property Links! It is now live on the website.`, 'success');
         });
     },
 
@@ -351,8 +365,11 @@ const HavenApp = {
         const container = document.getElementById('property-details-content');
         const isFav = HavenDB.isFavorite(prop.id);
         const agentAvatarHtml = prop.agent?.avatarImg 
-            ? `<img src="${prop.agent.avatarImg}" alt="${prop.agent.name}" class="w-14 h-14 rounded-full object-cover">`
-            : `<div class="w-14 h-14 rounded-full bg-primary text-white font-bold flex items-center justify-center text-lg">${prop.agent?.avatar || 'EA'}</div>`;
+            ? `<img src="${prop.agent.avatarImg}" alt="${prop.agent.name}" class="w-14 h-14 rounded-full object-cover border-2 border-white shadow">`
+            : `<div class="w-14 h-14 rounded-full bg-primary text-white font-bold flex items-center justify-center text-lg shadow">${prop.agent?.avatar || 'IK'}</div>`;
+
+        const waText = encodeURIComponent(`Hello City Property Links, I am inquiring about "${prop.title}" (${prop.priceDisplay}) located at ${prop.location}. Please provide availability and transfer details.`);
+        const waLink = `https://wa.me/923036448400?text=${waText}`;
 
         container.innerHTML = `
             <div class="relative h-72 md:h-96 w-full overflow-hidden bg-slate-900">
@@ -360,15 +377,18 @@ const HavenApp = {
                 <button type="button" class="close-modal-btn absolute top-5 right-5 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center text-white transition">
                     <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
-                <div class="absolute top-5 left-5 flex gap-2">
+                <div class="absolute top-5 left-5 flex flex-wrap gap-2">
                     <span class="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white ${prop.purpose === 'For Rent' ? 'bg-teal-600' : 'bg-primary'} shadow-md">
                         ${prop.purpose}
                     </span>
-                    <span class="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/90 backdrop-blur-md text-slate-800 shadow-md">
+                    <span class="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/95 backdrop-blur-md text-slate-800 shadow-md">
                         ${prop.type}
                     </span>
+                    <span class="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-900/90 text-amber-300 shadow-md flex items-center gap-1.5">
+                        <i class="fa-solid fa-certificate text-amber-400"></i> DHA Reg #15 (5-Star)
+                    </span>
                 </div>
-                <div class="absolute bottom-5 left-5 bg-slate-950/85 backdrop-blur-md text-white px-5 py-2 rounded-2xl font-bold text-2xl shadow-xl">
+                <div class="absolute bottom-5 left-5 bg-slate-950/85 backdrop-blur-md text-white px-5 py-2.5 rounded-2xl font-bold text-2xl shadow-xl">
                     ${prop.priceDisplay}
                 </div>
             </div>
@@ -378,13 +398,23 @@ const HavenApp = {
                     <div>
                         <p class="text-primary font-semibold text-sm mb-1"><i class="fa-solid fa-location-dot mr-1.5"></i> ${prop.location}</p>
                         <h2 class="text-2xl md:text-3xl font-bold text-slate-900">${prop.title}</h2>
+                        <div class="mt-2 inline-flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-600 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-lg">
+                            <span class="text-emerald-700 font-bold"><i class="fa-solid fa-shield-check"></i> City Property Links</span>
+                            <span>•</span>
+                            <span>DHA Reg #15</span>
+                            <span>•</span>
+                            <span>Direct Helpline: <a href="tel:03036448400" class="text-primary font-bold hover:underline">0303-6448400</a></span>
+                        </div>
                     </div>
-                    <div class="flex items-center gap-3">
+                    <div class="flex flex-wrap items-center gap-3">
                         <button onclick="HavenApp.toggleFavFromCard('${prop.id}', this)" class="px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 hover:text-red-500 hover:border-red-200 font-medium text-sm flex items-center gap-2 transition ${isFav ? 'text-red-500' : ''}">
                             <i class="${isFav ? 'fa-solid' : 'fa-regular'} fa-heart text-red-500"></i> ${isFav ? 'Saved' : 'Save'}
                         </button>
-                        <button onclick="HavenApp.openContactAgentModal('${prop.agent?.name || 'Qasim Ali'}', '${prop.title}')" class="px-5 py-2.5 rounded-xl bg-primary hover:bg-primaryHover text-white font-bold text-sm shadow-md transition flex items-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i> Contact Agent
+                        <a href="${waLink}" target="_blank" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
+                        </a>
+                        <button onclick="HavenApp.openContactAgentModal('${prop.agent?.name || 'Izhaar Hussain Khan'}', '${prop.title}')" class="px-5 py-2.5 rounded-xl bg-primary hover:bg-primaryHover text-white font-bold text-sm shadow-md transition flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Contact Advisor
                         </button>
                     </div>
                 </div>
@@ -393,28 +423,28 @@ const HavenApp = {
                 <div class="grid grid-cols-3 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100 text-center">
                     <div>
                         <span class="text-slate-400 text-xs block mb-1 uppercase font-semibold"><i class="fa-solid fa-bed text-primary mr-1"></i> Bedrooms</span>
-                        <span class="text-xl font-bold text-slate-800">${prop.beds}</span>
+                        <span class="text-xl font-bold text-slate-800">${prop.beds > 0 ? prop.beds : 'N/A (Plot)'}</span>
                     </div>
                     <div>
                         <span class="text-slate-400 text-xs block mb-1 uppercase font-semibold"><i class="fa-solid fa-bath text-primary mr-1"></i> Bathrooms</span>
-                        <span class="text-xl font-bold text-slate-800">${prop.baths}</span>
+                        <span class="text-xl font-bold text-slate-800">${prop.baths > 0 ? prop.baths : 'N/A'}</span>
                     </div>
                     <div>
-                        <span class="text-slate-400 text-xs block mb-1 uppercase font-semibold"><i class="fa-solid fa-vector-square text-primary mr-1"></i> Total Area</span>
-                        <span class="text-xl font-bold text-slate-800">${prop.area.toLocaleString()} sqft</span>
+                        <span class="text-slate-400 text-xs block mb-1 uppercase font-semibold"><i class="fa-solid fa-vector-square text-primary mr-1"></i> Size / Dimension</span>
+                        <span class="text-xl font-bold text-slate-800">${prop.areaUnit || (prop.area + ' sqft')}</span>
                     </div>
                 </div>
 
                 <!-- Description -->
                 <div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Overview & Description</h3>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Listing Overview & Details</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">${prop.description}</p>
                 </div>
 
                 <!-- Amenities -->
                 ${prop.amenities && prop.amenities.length ? `
                 <div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">Key Amenities</h3>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Features & Clearances</h3>
                     <div class="flex flex-wrap gap-2">
                         ${prop.amenities.map(amenity => `
                             <span class="px-3.5 py-1.5 bg-indigo-50/70 border border-indigo-100 text-primary text-xs font-semibold rounded-lg flex items-center gap-1.5">
@@ -424,23 +454,23 @@ const HavenApp = {
                     </div>
                 </div>` : ''}
 
-                <!-- Agent Box -->
+                <!-- Agent / Dealer Box -->
                 <div class="bg-gradient-to-r from-slate-50 to-indigo-50/40 p-5 rounded-2xl border border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div class="flex items-center gap-4 text-center sm:text-left">
                         ${agentAvatarHtml}
                         <div>
-                            <span class="text-xs text-primary font-bold uppercase tracking-wider">Listing Agent</span>
-                            <h4 class="text-lg font-bold text-slate-900">${prop.agent?.name || 'Haven Broker'}</h4>
-                            <p class="text-xs text-slate-500">${prop.agent?.role || 'Senior Realtor'}</p>
+                            <span class="text-[11px] text-emerald-700 font-bold uppercase tracking-wider">City Property Links — DHA Reg #15</span>
+                            <h4 class="text-lg font-bold text-slate-900">${prop.agent?.name || 'Izhaar Hussain Khan'}</h4>
+                            <p class="text-xs text-slate-500">${prop.agent?.role || 'Registered Real Estate Dealer'}</p>
                         </div>
                     </div>
-                    <div class="flex gap-2">
-                        <a href="tel:${prop.agent?.phone || '+18004884066'}" class="px-4 py-2 bg-white border border-slate-200 text-slate-700 hover:text-primary hover:border-primary rounded-xl text-sm font-semibold transition flex items-center gap-1.5">
-                            <i class="fa-solid fa-phone"></i> Call
+                    <div class="flex flex-wrap gap-2">
+                        <a href="tel:03036448400" class="px-4 py-2 bg-white border border-slate-200 text-slate-700 hover:text-primary hover:border-primary rounded-xl text-sm font-semibold transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-phone"></i> Call 0303-6448400
                         </a>
-                        <button onclick="HavenApp.openContactAgentModal('${prop.agent?.name || 'Qasim Ali'}', '${prop.title}')" class="px-4 py-2 bg-primary text-white hover:bg-primaryHover rounded-xl text-sm font-semibold transition flex items-center gap-1.5">
-                            <i class="fa-solid fa-envelope"></i> Message
-                        </button>
+                        <a href="${waLink}" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-sm font-semibold transition flex items-center gap-1.5">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
@@ -459,26 +489,36 @@ const HavenApp = {
         const subtextEl = document.getElementById('agent-modal-subtext');
         const nameInput = document.getElementById('agent-form-name');
         const refInput = document.getElementById('agent-form-property-ref');
+        const waBtn = document.getElementById('agent-modal-whatsapp-btn');
 
         if (nameInput) nameInput.value = agent.name;
         if (refInput) refInput.value = propertyRef;
         if (subtextEl) {
-            subtextEl.textContent = propertyRef ? `Inquiring about: "${propertyRef}"` : `Direct message to ${agent.name}`;
+            subtextEl.textContent = propertyRef ? `Inquiring for: "${propertyRef}"` : `Direct inquiry to ${agent.name} (City Property Links)`;
         }
 
         const avatarHtml = agent.avatarImg 
             ? `<img src="${agent.avatarImg}" alt="${agent.name}" class="w-14 h-14 rounded-full object-cover border-2 border-white shadow">`
-            : `<div class="w-14 h-14 rounded-full bg-primary text-white font-bold flex items-center justify-center text-lg shadow">${agent.avatar || 'QA'}</div>`;
+            : `<div class="w-14 h-14 rounded-full bg-primary text-white font-bold flex items-center justify-center text-lg shadow">${agent.avatar || 'IK'}</div>`;
 
         if (headerEl) {
             headerEl.innerHTML = `
                 ${avatarHtml}
-                <div>
-                    <h4 class="text-base font-bold text-slate-900">${agent.name}</h4>
+                <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-base font-bold text-slate-900">${agent.name}</h4>
+                        <span class="text-[10px] font-bold px-2.5 py-0.5 rounded bg-emerald-100 text-emerald-800">${agent.badge || 'DHA Registered'}</span>
+                    </div>
                     <p class="text-primary text-xs font-semibold">${agent.role}</p>
-                    <p class="text-slate-500 text-xs mt-0.5"><i class="fa-solid fa-phone mr-1"></i> ${agent.phone}</p>
+                    <p class="text-slate-500 text-xs font-medium mt-0.5"><i class="fa-solid fa-building-circle-check mr-1"></i> City Property Links — DHA Reg #15</p>
+                    <p class="text-slate-700 text-xs mt-1 font-bold"><i class="fa-solid fa-phone mr-1 text-primary"></i> <a href="tel:03036448400" class="hover:underline">0303-6448400</a></p>
                 </div>
             `;
+        }
+
+        if (waBtn) {
+            const text = encodeURIComponent(`Hello ${agent.name}, I am contacting City Property Links regarding ${propertyRef ? propertyRef : 'properties in Bahawalpur'}.`);
+            waBtn.href = `https://wa.me/923036448400?text=${text}`;
         }
 
         this.openModal('contact-agent-modal');
@@ -492,11 +532,11 @@ const HavenApp = {
             e.preventDefault();
             const formData = new FormData(form);
             const inquiry = {
-                type: 'Agent Message',
+                type: 'Direct Team Inquiry',
                 agentName: formData.get('agentName'),
                 propertyRef: formData.get('propertyRef'),
                 senderName: formData.get('senderName'),
-                senderEmail: formData.get('senderEmail'),
+                senderEmail: formData.get('senderEmail') || 'N/A',
                 senderPhone: formData.get('senderPhone'),
                 message: formData.get('message')
             };
@@ -504,63 +544,82 @@ const HavenApp = {
             HavenDB.saveInquiry(inquiry);
             form.reset();
             this.closeAllModals();
-            this.showToast(`Message sent to ${inquiry.agentName}! They will respond within 24 hours.`, 'success');
+            this.showToast(`Inquiry sent to ${inquiry.agentName}! City Property Links will call you back shortly on ${inquiry.senderPhone}.`, 'success');
         });
     },
 
-    // Card Renderer for Property
+    // Card Renderer for Bahawalpur Properties
     renderPropertyCard: function(prop) {
         const isFav = HavenDB.isFavorite(prop.id);
         const isRental = prop.purpose === 'For Rent';
         
         const agentAvatarHtml = prop.agent?.avatarImg 
             ? `<img src="${prop.agent.avatarImg}" alt="${prop.agent.name}" class="w-7 h-7 rounded-full object-cover">`
-            : `<div class="w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-600">${prop.agent?.avatar || 'QA'}</div>`;
+            : `<div class="w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-600">${prop.agent?.avatar || 'IK'}</div>`;
+
+        const waText = encodeURIComponent(`Hello City Property Links, I am interested in: ${prop.title} (${prop.priceDisplay}) in ${prop.location}.`);
+        const waLink = `https://wa.me/923036448400?text=${waText}`;
 
         return `
             <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-xl transition duration-300 flex flex-col">
                 <div class="relative h-64 overflow-hidden bg-slate-100">
                     <img src="${prop.image}" alt="${prop.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 cursor-pointer" onclick="HavenApp.openPropertyDetails('${prop.id}')">
-                    <div class="absolute top-4 left-4 ${isRental ? 'bg-teal-600' : 'bg-white/95 text-slate-900'} backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold ${isRental ? 'text-white' : ''}">
-                        ${prop.purpose.toUpperCase()}
+                    <div class="absolute top-4 left-4 flex flex-wrap gap-1.5">
+                        <span class="${isRental ? 'bg-teal-600' : 'bg-white/95 text-slate-900'} backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold ${isRental ? 'text-white' : ''}">
+                            ${prop.purpose.toUpperCase()}
+                        </span>
+                        <span class="bg-slate-900/85 backdrop-blur-md text-amber-300 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+                            <i class="fa-solid fa-certificate text-[9px]"></i> ${prop.statusBadge || 'DHA Reg #15'}
+                        </span>
                     </div>
                     <button type="button" onclick="HavenApp.toggleFavFromCard('${prop.id}', this)" class="absolute top-4 right-4 bg-white/90 backdrop-blur-md text-slate-400 w-9 h-9 rounded-full flex items-center justify-center shadow-md hover:text-red-500 transition">
                         <i class="${isFav ? 'fa-solid text-red-500' : 'fa-regular'} fa-heart"></i>
                     </button>
-                    <div class="absolute bottom-4 left-4 bg-slate-900/85 backdrop-blur-sm text-white px-4 py-1.5 rounded-lg font-bold text-lg">
+                    <div class="absolute bottom-4 left-4 bg-slate-900/90 backdrop-blur-sm text-white px-4 py-1.5 rounded-xl font-bold text-lg">
                         ${prop.priceDisplay}
                     </div>
                 </div>
 
                 <div class="p-6 flex-1 flex flex-col justify-between">
                     <div>
-                        <p class="text-xs text-primary font-semibold mb-1 line-clamp-1"><i class="fa-solid fa-location-dot mr-1"></i> ${prop.location}</p>
+                        <div class="flex items-center justify-between mb-1">
+                            <p class="text-xs text-primary font-semibold line-clamp-1"><i class="fa-solid fa-location-dot mr-1"></i> ${prop.location}</p>
+                            <span class="text-[10px] font-bold bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full">${prop.type}</span>
+                        </div>
                         <h3 class="text-lg font-bold text-slate-900 mb-3 line-clamp-1 hover:text-primary transition cursor-pointer" onclick="HavenApp.openPropertyDetails('${prop.id}')">${prop.title}</h3>
                         
                         <div class="flex justify-between items-center py-3 border-t border-b border-slate-100 mb-4 text-xs">
                             <div class="flex flex-col items-center">
                                 <span class="text-slate-400 font-medium"><i class="fa-solid fa-bed text-primary mr-1"></i> Beds</span>
-                                <span class="font-bold text-slate-700 mt-0.5">${prop.beds}</span>
+                                <span class="font-bold text-slate-700 mt-0.5">${prop.beds > 0 ? prop.beds : '-'}</span>
                             </div>
                             <div class="flex flex-col items-center">
                                 <span class="text-slate-400 font-medium"><i class="fa-solid fa-bath text-primary mr-1"></i> Baths</span>
-                                <span class="font-bold text-slate-700 mt-0.5">${prop.baths}</span>
+                                <span class="font-bold text-slate-700 mt-0.5">${prop.baths > 0 ? prop.baths : '-'}</span>
                             </div>
                             <div class="flex flex-col items-center">
-                                <span class="text-slate-400 font-medium"><i class="fa-solid fa-vector-square text-primary mr-1"></i> Area</span>
-                                <span class="font-bold text-slate-700 mt-0.5">${prop.area.toLocaleString()} sqft</span>
+                                <span class="text-slate-400 font-medium"><i class="fa-solid fa-vector-square text-primary mr-1"></i> Size</span>
+                                <span class="font-bold text-slate-700 mt-0.5">${prop.areaUnit || (prop.area + ' sqft')}</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="flex justify-between items-center pt-2">
+                    <div class="pt-2 flex items-center justify-between gap-2 border-t border-slate-50">
                         <div class="flex items-center gap-2">
                             ${agentAvatarHtml}
-                            <span class="text-xs font-medium text-slate-600 line-clamp-1">${prop.agent?.name || 'Qasim Ali'}</span>
+                            <div class="flex flex-col">
+                                <span class="text-xs font-bold text-slate-700 leading-none">${prop.agent?.name || 'Izhaar Hussain Khan'}</span>
+                                <span class="text-[10px] text-emerald-700 font-semibold leading-none mt-1">DHA Reg #15</span>
+                            </div>
                         </div>
-                        <button onclick="HavenApp.openPropertyDetails('${prop.id}')" class="text-primary font-bold text-xs hover:text-primaryHover transition flex items-center gap-1 py-1">
-                            View Details <i class="fa-solid fa-arrow-right"></i>
-                        </button>
+                        <div class="flex items-center gap-1.5">
+                            <a href="${waLink}" target="_blank" class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white transition flex items-center justify-center text-sm" title="Chat on WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                            <button onclick="HavenApp.openPropertyDetails('${prop.id}')" class="bg-primary/10 text-primary hover:bg-primary hover:text-white px-3 py-1.5 rounded-lg text-xs font-bold transition">
+                                Details
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -598,7 +657,6 @@ const HavenApp = {
             }
         });
 
-        // Close on link click
         menu.querySelectorAll('a').forEach(a => {
             a.addEventListener('click', () => {
                 menu.classList.add('hidden');
@@ -635,14 +693,13 @@ const HavenApp = {
                 if (emailInput && emailInput.value.trim()) {
                     HavenDB.saveSubscription(emailInput.value.trim());
                     emailInput.value = '';
-                    HavenApp.showToast('Thank you for subscribing to Haven Estates updates!', 'success');
+                    HavenApp.showToast('Thank you for subscribing to City Property Links updates!', 'success');
                 }
             });
         });
     },
 
     setupGlobalEventListeners: function() {
-        // Any link with data-open-add-property opens the Add Property modal
         document.addEventListener('click', (e) => {
             const target = e.target.closest('[data-open-add-property]');
             if (target) {
@@ -658,3 +715,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.HavenApp = HavenApp;
+window.CityPropertyApp = HavenApp;

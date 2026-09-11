@@ -1,261 +1,418 @@
 /**
- * Haven Estates - Centralized Real Estate Data Layer & LocalStorage State
+ * City Property Links — Bahawalpur
+ * Centralized Real Estate Data Layer & LocalStorage State
+ * Authorized DHA Bahawalpur Registered Dealer #15 | 5-Star Rated
  */
+
+const AGENCY_INFO = {
+    name: "City Property Links",
+    shortName: "City Property Links",
+    tagline: "DHA Bahawalpur Registered Dealer #15 | 5-Star Rated",
+    category: "Real Estate Agency / Property Broker",
+    rating: "5.0",
+    ratingStars: "★★★★★",
+    ratingDetail: "5-Star Rating in DHA Bahawalpur Published Rating List",
+    dhaRegNumber: "15",
+    address: "Office #9, Al-Madina Commercial Center, Airport Road, near Meezan Bank, Bahawalpur Cantt, Bahawalpur",
+    city: "Bahawalpur",
+    province: "Punjab, Pakistan",
+    phone: "0303-6448400",
+    phoneDisplay: "0303-6448400",
+    phoneLink: "tel:03036448400",
+    whatsapp: "923036448400",
+    whatsappDisplay: "+92 303 6448400",
+    whatsappLink: "https://wa.me/923036448400?text=Hello%20City%20Property%20Links%2C%20I%20am%20interested%20in%20Bahawalpur%20properties",
+    email: "info@citypropertylinks.com",
+    registeredDealerContact: "Izhaar Hussain Khan",
+    ceoName: "Husnain Izhar Malik Kamran",
+    timing: "Mon - Sat: 9:30 AM - 8:00 PM (Contact business to confirm current timings)",
+    aboutSummary: "City Property Links provides real estate services in Bahawalpur, helping clients explore residential and commercial property opportunities. Our focus is on transparent dealing, professional guidance and helping clients make informed property decisions.",
+    googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13854.551061737847!2d71.6881944!3d29.3855556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b90fbb62241e3%3A0xe6bf45e54d868771!2sAirport%20Rd%2C%20Bahawalpur%20Cantt%2C%20Bahawalpur%2C%20Punjab!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+};
+
+const BAHAWALPUR_AREAS = [
+    "DHA Bahawalpur",
+    "Model Town",
+    "Satellite Town",
+    "Airport Road",
+    "Yazman Road",
+    "Noor Mahal Road",
+    "Khayaban-e-Ali Housing Society"
+];
+
+const AGENCY_SERVICES = [
+    {
+        id: "srv-dha",
+        title: "DHA Bahawalpur Properties",
+        subtitle: "Registered Dealer #15",
+        badge: "Official 5-Star Dealer",
+        icon: "fa-certificate",
+        color: "from-amber-600 to-amber-800",
+        description: "Official buying, selling, and file transfer services for residential and commercial plots in all sectors of DHA Bahawalpur."
+    },
+    {
+        id: "srv-residential",
+        title: "Residential Properties",
+        subtitle: "Houses for Sale & Rent",
+        badge: "Prime Living",
+        icon: "fa-house-chimney",
+        color: "from-blue-600 to-indigo-700",
+        description: "Curated portfolio of brand-new luxury villas, family houses, and rental portions across Model Town, Satellite Town, and Cantt."
+    },
+    {
+        id: "srv-commercial",
+        title: "Commercial Properties",
+        subtitle: "Plazas & Retail Hubs",
+        badge: "High ROI",
+        icon: "fa-building-columns",
+        color: "from-slate-700 to-slate-900",
+        description: "Prime commercial plots, multi-storey commercial buildings, and retail showroom leases on Airport Road and main boulevards."
+    },
+    {
+        id: "srv-plots",
+        title: "Plots & Land Investment",
+        subtitle: "1 Kanal, 10 Marla, 5 Marla",
+        badge: "Clear Title",
+        icon: "fa-map-location-dot",
+        color: "from-emerald-600 to-teal-700",
+        description: "Verified residential and commercial plots with clear registry deeds, immediate possession, and confirmed utility readiness."
+    },
+    {
+        id: "srv-consultation",
+        title: "Property Consultation & Verification",
+        subtitle: "Transparent Advice",
+        badge: "Legal Security",
+        icon: "fa-handshake-angle",
+        color: "from-purple-600 to-indigo-800",
+        description: "Expert guidance on market trends, property valuation, legal deed verification, and allotment record checks before purchase."
+    },
+    {
+        id: "srv-investment",
+        title: "Strategic Property Investment",
+        subtitle: "Capital Growth",
+        badge: "Maximum Yield",
+        icon: "fa-chart-line",
+        color: "from-rose-600 to-red-700",
+        description: "Portfolio structuring for overseas and local investors seeking secure long-term capital appreciation in Bahawalpur."
+    }
+];
 
 const INITIAL_PROPERTIES = [
     {
         id: "prop-1",
-        title: "Modern Luxury Villa with Pool",
-        type: "Villa",
+        title: "1 Kanal Luxury Family House",
+        type: "House",
         purpose: "For Sale",
-        price: 450000,
-        priceDisplay: "$450,000",
-        location: "DHA Phase 1, Bahawalpur",
-        city: "Bahawalpur",
-        beds: 4,
-        baths: 3,
-        area: 2500,
+        price: 38500000,
+        priceDisplay: "PKR 3.85 Crore",
+        location: "Sector A, DHA Bahawalpur",
+        city: "DHA Bahawalpur",
+        beds: 5,
+        baths: 6,
+        area: 4500,
+        areaUnit: "1 Kanal (4,500 sqft)",
         featured: true,
+        network: "DHA Bahawalpur Reg. #15",
+        networkPhone: "0303-6448400",
+        statusBadge: "Verified DHA Listing",
         image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
         gallery: [
             "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
             "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
             "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
         ],
-        description: "An architecturally stunning modern villa offering contemporary elegance, private swimming pool, landscaped lawn, high ceilings, Italian marble flooring, and smart home automation throughout.",
-        amenities: ["Swimming Pool", "Smart Home Automation", "Private Garden", "Covered Garage (2 Cars)", "Solar Power Setup", "Central Climate Control", "24/7 Gated Security"],
+        description: "Brand new 1 Kanal architectural luxury home situated in Sector A, DHA Bahawalpur. Verified and offered through City Property Links (DHA Reg #15). Includes 5 master bedrooms with attached designer bathrooms, double kitchens fitted with imported appliances, servant quarters, solid ash wood doors, and front lawn.",
+        amenities: ["1 Kanal Corner Facing", "Double Designer Kitchens", "Servant Quarters with Bath", "Imported Spanish Tiles", "Underground Electricity", "24/7 DHA Security Patrol", "Spacious 3-Car Parking Porch"],
         agent: {
-            name: "Qasim Ali",
-            role: "Lead Estate Broker",
-            phone: "+1 (800) 488-4066",
-            email: "qasim.ali@havenestates.com",
-            avatar: "QA"
+            name: "Izhaar Hussain Khan",
+            role: "Registered Dealer (DHA Reg #15)",
+            network: "City Property Links",
+            phone: "0303-6448400",
+            phoneLink: "tel:03036448400",
+            whatsappLink: "https://wa.me/923036448400?text=Hello%20Izhaar%20Khan%2C%20I%20am%20inquiring%20about%201%20Kanal%20House%20in%20Sector%20A%20DHA%20Bahawalpur",
+            email: "izhaar@citypropertylinks.com",
+            avatar: "IK"
         },
         dateAdded: "2026-08-15"
     },
     {
         id: "prop-2",
-        title: "Contemporary City Apartment",
-        type: "Apartment",
-        purpose: "For Rent",
-        price: 1200,
-        priceDisplay: "$1,200/mo",
-        location: "Model Town, Bahawalpur",
-        city: "Bahawalpur",
-        beds: 2,
-        baths: 2,
-        area: 1100,
-        featured: true,
-        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-        gallery: [
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-        ],
-        description: "Bright, airy contemporary 2-bedroom apartment with designer kitchen fixtures, private balcony overlooking the city skyline, dedicated underground parking, and access to fitness gym.",
-        amenities: ["Balcony View", "Underground Parking", "Gym & Fitness Studio", "High-speed Fiber Internet", "Elevator Access", "Intercom System"],
-        agent: {
-            name: "David Smith",
-            role: "Commercial Specialist",
-            phone: "+1 (877) 697-0830",
-            email: "david.s@havenestates.com",
-            avatarImg: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-        },
-        dateAdded: "2026-08-20"
-    },
-    {
-        id: "prop-3",
-        title: "Spacious Suburban Family Home",
+        title: "10 Marla Modern Designer House",
         type: "House",
         purpose: "For Sale",
-        price: 320000,
-        priceDisplay: "$320,000",
-        location: "One Unit, Bahawalpur",
-        city: "Bahawalpur",
-        beds: 5,
+        price: 24000000,
+        priceDisplay: "PKR 2.4 Crore",
+        location: "Block B, Model Town, Bahawalpur",
+        city: "Model Town",
+        beds: 4,
         baths: 4,
-        area: 3200,
+        area: 2250,
+        areaUnit: "10 Marla (2,250 sqft)",
         featured: true,
+        network: "City Property Links",
+        networkPhone: "0303-6448400",
+        statusBadge: "Prime Model Town",
         image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
         gallery: [
             "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
             "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
         ],
-        description: "Generously proportioned 5-bedroom home ideal for larger families, featuring two en-suite master bedrooms, a chef-grade open kitchen, double parking garage, and serene backyard.",
-        amenities: ["Backyard Garden", "Double Garage", "Chef's Kitchen", "Fireplace", "Storage Room", "Rooftop Terrace"],
+        description: "Contemporary double-storey 10 Marla house in central Model Town, Bahawalpur. Designed with open American kitchen, 4 master bedrooms, designer gypsum ceilings, covered car porch for 2 vehicles, rooftop terrace, and clear legal registry documents.",
+        amenities: ["Covered Car Porch (2 Cars)", "American Open Kitchen", "Rooftop Open Terrace", "Sui Gas & Clean Water", "Walking Distance to Commercial Market", "Clear Ownership Deed"],
         agent: {
-            name: "Qasim Ali",
-            role: "Lead Estate Broker",
-            phone: "+1 (800) 488-4066",
-            email: "qasim.ali@havenestates.com",
-            avatar: "QA"
+            name: "Izhar Balouch",
+            role: "Senior Property Consultant",
+            network: "City Property Links",
+            phone: "0303-6448400",
+            phoneLink: "tel:03036448400",
+            whatsappLink: "https://wa.me/923036448400?text=Hello%20Izhar%20Balouch%2C%20I%20am%20inquiring%20about%2010%20Marla%20House%20in%20Model%20Town",
+            email: "izhar.balouch@citypropertylinks.com",
+            avatar: "IB"
+        },
+        dateAdded: "2026-08-20"
+    },
+    {
+        id: "prop-3",
+        title: "1 Kanal Ready-to-Build Residential Plot",
+        type: "Plot / Land",
+        purpose: "For Sale",
+        price: 8500000,
+        priceDisplay: "PKR 85 Lakh",
+        location: "Sector C, DHA Bahawalpur",
+        city: "DHA Bahawalpur",
+        beds: 0,
+        baths: 0,
+        area: 4500,
+        areaUnit: "1 Kanal (4,500 sqft)",
+        featured: true,
+        network: "DHA Bahawalpur Reg. #15",
+        networkPhone: "0303-6448400",
+        statusBadge: "Possession Ready",
+        image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        gallery: [
+            "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        ],
+        description: "Prime 1 Kanal residential plot located on a 60ft wide road in Sector C, DHA Bahawalpur. Direct transfer handled through City Property Links (Official Dealer #15). Possession-ready block with underground utilities, paved roads, and sector park nearby.",
+        amenities: ["Possession Ready", "60ft Wide Road Frontage", "Park Facing Block", "Underground Electricity & Water", "Immediate House Construction", "Direct Allocation File"],
+        agent: {
+            name: "Izhaar Hussain Khan",
+            role: "Registered Dealer (DHA Reg #15)",
+            network: "City Property Links",
+            phone: "0303-6448400",
+            phoneLink: "tel:03036448400",
+            whatsappLink: "https://wa.me/923036448400?text=Hello%20Izhaar%20Khan%2C%20I%20am%20inquiring%20about%201%20Kanal%20Plot%20in%20Sector%20C%20DHA%20Bahawalpur",
+            email: "izhaar@citypropertylinks.com",
+            avatar: "IK"
         },
         dateAdded: "2026-08-25"
     },
     {
         id: "prop-4",
-        title: "Skyline Luxury Penthouse",
-        type: "Apartment",
-        purpose: "For Sale",
-        price: 780000,
-        priceDisplay: "$780,000",
-        location: "Gulberg Heights, Lahore",
-        city: "Lahore",
-        beds: 3,
-        baths: 3,
-        area: 2800,
+        title: "Prime Commercial Plaza Floor Space",
+        type: "Commercial",
+        purpose: "For Rent",
+        price: 120000,
+        priceDisplay: "PKR 120,000/mo",
+        location: "Airport Road, Bahawalpur Cantt",
+        city: "Airport Road",
+        beds: 0,
+        baths: 2,
+        area: 2200,
+        areaUnit: "2,200 sqft",
         featured: true,
-        image: "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        network: "City Property Links",
+        networkPhone: "0303-6448400",
+        statusBadge: "Main Boulevard Cantt",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
         gallery: [
-            "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
         ],
-        description: "Exclusive top-floor penthouse with panoramic city vistas, expansive wrap-around glass walls, private rooftop jacuzzi, and bespoke interior architecture.",
-        amenities: ["Private Jacuzzi", "Panoramic Skyline Views", "Private Elevator Key", "Concierge Service", "Smart Thermostat", "Wine Cellar"],
+        description: "Open-concept commercial floor on prime Airport Road, Bahawalpur Cantt, near Al-Madina Commercial Center and Meezan Bank. High footfall commercial hub ideal for corporate offices, software houses, private banks, or medical testing clinics.",
+        amenities: ["Airport Road Cantt Frontage", "Elevator & Wide Staircase", "Front Dedicated Parking", "Backup Generator Conduits", "High Footfall Hub", "Commercial Approved"],
         agent: {
-            name: "Sarah Jenkins",
-            role: "Luxury Homes Specialist",
-            phone: "+1 (855) 450-0442",
-            email: "sarah.j@havenestates.com",
-            avatarImg: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+            name: "Muhammad Saeed",
+            role: "Commercial Property Advisor",
+            network: "City Property Links",
+            phone: "0303-6448400",
+            phoneLink: "tel:03036448400",
+            whatsappLink: "https://wa.me/923036448400?text=Hello%20Muhammad%20Saeed%2C%20I%20am%20inquiring%20about%20Commercial%20Floor%20on%20Airport%20Road",
+            email: "saeed@citypropertylinks.com",
+            avatar: "MS"
         },
         dateAdded: "2026-09-01"
     },
     {
         id: "prop-5",
-        title: "Prime Commercial Corporate Plaza",
-        type: "Commercial",
-        purpose: "For Rent",
-        price: 4500,
-        priceDisplay: "$4,500/mo",
-        location: "Main Boulevard, DHA",
-        city: "Bahawalpur",
-        beds: 0,
-        baths: 4,
-        area: 4500,
+        title: "5 Marla Brand New Modern House",
+        type: "House",
+        purpose: "For Sale",
+        price: 13500000,
+        priceDisplay: "PKR 1.35 Crore",
+        location: "Sector B, Satellite Town, Bahawalpur",
+        city: "Satellite Town",
+        beds: 3,
+        baths: 3,
+        area: 1125,
+        areaUnit: "5 Marla (1,125 sqft)",
         featured: false,
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        network: "City Property Links",
+        networkPhone: "0303-6448400",
+        statusBadge: "Newly Built",
+        image: "https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
         gallery: [
-            "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            "https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
         ],
-        description: "Modern open-concept commercial floor space ideal for corporate headquarters, IT companies, or financial institutions. Equipped with high-speed fiber conduits and backup generators.",
-        amenities: ["Full Power Backup Generator", "High-speed Elevators", "Conference Hall", "Dedicated Basement Parking", "CCTV Security Surveillance"],
+        description: "Affordable luxury 5 Marla double-storey house in Satellite Town, Bahawalpur. 3 spacious bedrooms with modern bathrooms, drawing room, stylish kitchen, car porch, and ready utility connections in a peaceful family neighborhood.",
+        amenities: ["Sui Gas Connected", "Sweet Water Supply", "Car Porch", "Full Marble Flooring", "Family Friendly Block", "Near Schools & Market"],
         agent: {
-            name: "David Smith",
-            role: "Commercial Specialist",
-            phone: "+1 (877) 697-0830",
-            email: "david.s@havenestates.com",
-            avatarImg: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+            name: "Izhar Balouch",
+            role: "Senior Property Consultant",
+            network: "City Property Links",
+            phone: "0303-6448400",
+            phoneLink: "tel:03036448400",
+            whatsappLink: "https://wa.me/923036448400?text=Hello%20Izhar%20Balouch%2C%20I%20am%20inquiring%20about%205%20Marla%20House%20in%20Satellite%20Town",
+            email: "izhar.balouch@citypropertylinks.com",
+            avatar: "IB"
         },
         dateAdded: "2026-09-02"
     },
     {
         id: "prop-6",
-        title: "Waterfront Serene Retreat Villa",
-        type: "Villa",
+        title: "10 Marla Prime Commercial Plot",
+        type: "Plot / Land",
         purpose: "For Sale",
-        price: 620000,
-        priceDisplay: "$620,000",
-        location: "Canal View, Bahawalpur",
-        city: "Bahawalpur",
-        beds: 4,
-        baths: 4,
-        area: 3600,
+        price: 16500000,
+        priceDisplay: "PKR 1.65 Crore",
+        location: "Main Boulevard Commercial, DHA Bahawalpur",
+        city: "DHA Bahawalpur",
+        beds: 0,
+        baths: 0,
+        area: 2250,
+        areaUnit: "10 Marla Commercial",
         featured: true,
-        image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        network: "DHA Bahawalpur Reg. #15",
+        networkPhone: "0303-6448400",
+        statusBadge: "Commercial Hot Spot",
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
         gallery: [
-            "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
         ],
-        description: "Wake up to breathtaking water views in this tranquil designer villa. Includes custom hardwood floors, infinity swimming deck, and floor-to-ceiling glass pavilions.",
-        amenities: ["Canal View Deck", "Infinity Pool", "Lush Lawn", "Outdoor BBQ Kitchen", "Maid's Quarters", "Multi-zone Audio"],
+        description: "Exceptional 10 Marla commercial plot located directly on Main Boulevard, DHA Bahawalpur. Unbeatable capital appreciation potential, ideal for multi-storey retail plaza, corporate office complex, or commercial bank branch.",
+        amenities: ["Main Boulevard Commercial Frontage", "DHA Approved Construction Plan", "Maximum Capital Gain Potential", "Official DHA Reg. #15 Transfer", "Wide Commercial Parking Area"],
         agent: {
-            name: "Emily Thorne",
-            role: "Property Consultant",
-            phone: "+1 (800) 319-0511",
-            email: "emily.t@havenestates.com",
-            avatarImg: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+            name: "Muhammad Saeed",
+            role: "Commercial Property Advisor",
+            network: "City Property Links",
+            phone: "0303-6448400",
+            phoneLink: "tel:03036448400",
+            whatsappLink: "https://wa.me/923036448400?text=Hello%20Muhammad%20Saeed%2C%20I%20am%20inquiring%20about%2010%20Marla%20Commercial%20Plot%20in%20DHA",
+            email: "saeed@citypropertylinks.com",
+            avatar: "MS"
         },
         dateAdded: "2026-09-04"
     },
     {
         id: "prop-7",
-        title: "Minimalist Modern Townhouse",
+        title: "1 Kanal Luxury Spanish Villa",
         type: "House",
-        purpose: "For Rent",
-        price: 1800,
-        priceDisplay: "$1,800/mo",
-        location: "Cantt Enclave, Bahawalpur",
-        city: "Bahawalpur",
-        beds: 3,
-        baths: 3,
-        area: 2100,
+        purpose: "For Sale",
+        price: 32000000,
+        priceDisplay: "PKR 3.2 Crore",
+        location: "Khayaban-e-Ali Housing Society, Bahawalpur",
+        city: "Khayaban-e-Ali",
+        beds: 5,
+        baths: 5,
+        area: 4500,
+        areaUnit: "1 Kanal (4,500 sqft)",
         featured: false,
-        image: "https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        network: "City Property Links",
+        networkPhone: "0303-6448400",
+        statusBadge: "Spanish Elevation",
+        image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
         gallery: [
-            "https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
         ],
-        description: "Elegant 3-bedroom townhouse situated in a quiet, high-security neighborhood. Features an open layout, solar water heater, modern kitchen, and private garage.",
-        amenities: ["Gated Enclave", "Solar Water Heating", "Private Patio", "Attached Garage", "Built-in Wardrobes"],
+        description: "Breathtaking 1 Kanal Spanish architecture villa in gated Khayaban-e-Ali Housing Society, Bahawalpur. High double-height lounge, imported sanitary fittings, landscaped front lawn, solar power setup, and full security.",
+        amenities: ["Spanish Architecture Elevation", "Lush Landscaped Lawn", "Solar System Installed", "Gated Security Community", "Corner Plot Frontage"],
         agent: {
-            name: "Jessica Alba",
-            role: "Residential Expert",
-            phone: "+1 (855) 450-0442",
-            email: "jessica.a@havenestates.com",
-            avatarImg: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+            name: "Husnain Izhar Malik Kamran",
+            role: "Chief Executive Officer (CEO)",
+            network: "City Property Links",
+            phone: "0303-6448400",
+            phoneLink: "tel:03036448400",
+            whatsappLink: "https://wa.me/923036448400?text=Hello%20Husnain%20Kamran%2C%20I%20am%20inquiring%20about%201%20Kanal%20Spanish%20Villa%20in%20Khayaban-e-Ali",
+            email: "ceo@citypropertylinks.com",
+            avatar: "HK"
         },
         dateAdded: "2026-09-05"
     },
     {
         id: "prop-8",
-        title: "Prime Residential Development Plot",
+        title: "5 Marla Residential Plot (Affordable Investment)",
         type: "Plot / Land",
         purpose: "For Sale",
-        price: 185000,
-        priceDisplay: "$185,000",
-        location: "Sector B, DHA Phase 2",
-        city: "Bahawalpur",
+        price: 3800000,
+        priceDisplay: "PKR 38 Lakh",
+        location: "Sector D, DHA Bahawalpur",
+        city: "DHA Bahawalpur",
         beds: 0,
         baths: 0,
-        area: 4500,
+        area: 1125,
+        areaUnit: "5 Marla (1,125 sqft)",
         featured: false,
-        image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        network: "DHA Bahawalpur Reg. #15",
+        networkPhone: "0303-6448400",
+        statusBadge: "Best Value DHA",
+        image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
         gallery: [
-            "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
         ],
-        description: "Exceptional 1-Kanal (500 sq. yard) corner residential plot with prime frontage on 60ft wide road. Completely cleared, ready for construction with all utility approvals in place.",
-        amenities: ["Corner Plot", "60ft Wide Road Frontage", "Gas & Underground Electricity", "Immediate Possession", "Clear Clean Deed"],
+        description: "Ideal budget-friendly investment plot in Sector D, DHA Bahawalpur. Fast-developing residential sector with high return prospects. Direct transfer with 100% verified documentation guaranteed by City Property Links.",
+        amenities: ["Affordable Entry Price", "High Investment Appreciation", "DHA Reg. #15 Guarantee", "Clear Allotment Record"],
         agent: {
-            name: "Michael Chang",
-            role: "Investment Advisor",
-            phone: "+1 (877) 697-0830",
-            email: "michael.c@havenestates.com",
-            avatarImg: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+            name: "Izhaar Hussain Khan",
+            role: "Registered Dealer (DHA Reg #15)",
+            network: "City Property Links",
+            phone: "0303-6448400",
+            phoneLink: "tel:03036448400",
+            whatsappLink: "https://wa.me/923036448400?text=Hello%20Izhaar%20Khan%2C%20I%20am%20inquiring%20about%205%20Marla%20Plot%20in%20Sector%20D%20DHA",
+            email: "izhaar@citypropertylinks.com",
+            avatar: "IK"
         },
         dateAdded: "2026-09-07"
     },
     {
         id: "prop-9",
-        title: "Luxury Royal Palms Estate",
-        type: "Villa",
+        title: "Executive 2 Kanal Farmhouse Land Parcel",
+        type: "Plot / Land",
         purpose: "For Sale",
-        price: 950000,
-        priceDisplay: "$950,000",
-        location: "Golf & Country Club, Bahawalpur",
-        city: "Bahawalpur",
-        beds: 6,
-        baths: 6,
-        area: 5200,
+        price: 9500000,
+        priceDisplay: "PKR 95 Lakh",
+        location: "Yazman Road, Bahawalpur",
+        city: "Yazman Road",
+        beds: 0,
+        baths: 0,
+        area: 9000,
+        areaUnit: "2 Kanal (9,000 sqft)",
         featured: true,
-        image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        network: "City Property Links",
+        networkPhone: "0303-6448400",
+        statusBadge: "Farmhouse Land",
+        image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
         gallery: [
-            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
         ],
-        description: "Majestic luxury estate facing the 18-hole championship golf course. Boasts 6 suites, indoor heated swimming pool, private cinema, wine cellar, and lush manicured grounds.",
-        amenities: ["Golf Course Frontage", "Indoor Heated Pool", "Private Cinema", "Staff Quarters", "4-Car Showroom Garage", "Smart Security"],
+        description: "Picturesque 2 Kanal land parcel located on Yazman Road, minutes away from Bahawalpur city. Ideal for executive farmhouse, fruit orchard, or private weekend getaway with access to sweet canal water and wide carpeted road.",
+        amenities: ["Sweet Water Tubewell Supply", "Wide Carpet Road Frontage", "Peaceful Green Environment", "Clear Registry Intiqal", "Electricity Available"],
         agent: {
-            name: "Qasim Ali",
-            role: "Lead Estate Broker",
-            phone: "+1 (800) 488-4066",
-            email: "qasim.ali@havenestates.com",
-            avatar: "QA"
+            name: "Husnain Izhar Malik Kamran",
+            role: "Chief Executive Officer (CEO)",
+            network: "City Property Links",
+            phone: "0303-6448400",
+            phoneLink: "tel:03036448400",
+            whatsappLink: "https://wa.me/923036448400?text=Hello%20Husnain%20Kamran%2C%20I%20am%20inquiring%20about%202%20Kanal%20Farmhouse%20on%20Yazman%20Road",
+            email: "ceo@citypropertylinks.com",
+            avatar: "HK"
         },
         dateAdded: "2026-09-08"
     }
@@ -264,121 +421,97 @@ const INITIAL_PROPERTIES = [
 const INITIAL_AGENTS = [
     {
         id: "agent-1",
-        name: "Qasim Ali",
-        role: "Lead Estate Broker",
-        specialty: "Luxury Villas & Prime Land",
-        avatar: "QA",
-        phone: "+1 (800) 488-4066",
-        email: "qasim.ali@havenestates.com",
-        sold: "120+",
-        experience: "15 Yrs",
-        badge: "Top Broker",
-        bio: "With over 15 years leading real estate acquisitions and luxury development sales, Qasim is the trusted advisor to premier buyers and investors.",
-        socials: { linkedin: "#", twitter: "#", envelope: "mailto:qasim.ali@havenestates.com" }
+        name: "Husnain Izhar Malik Kamran",
+        role: "Chief Executive Officer (CEO)",
+        badge: "CEO & Principal",
+        specialty: "Strategic Investments & DHA Portfolios",
+        avatar: "HK",
+        phone: "0303-6448400",
+        phoneLink: "tel:03036448400",
+        whatsappLink: "https://wa.me/923036448400?text=Hello%20Husnain%20Kamran%2C%20I%20want%20to%20consult%20regarding%20property%20investment%20in%20Bahawalpur",
+        email: "ceo@citypropertylinks.com",
+        sold: "180+",
+        experience: "12+ Yrs",
+        bio: "Chief Executive Officer of City Property Links. Leading transparent real estate advisory in Bahawalpur, specializing in high-value commercial ventures and DHA property investments.",
+        socials: { whatsapp: "https://wa.me/923036448400", phone: "tel:03036448400", envelope: "mailto:ceo@citypropertylinks.com" }
     },
     {
         id: "agent-2",
-        name: "Sarah Jenkins",
-        role: "Luxury Homes Specialist",
-        specialty: "Penthouses & Mansions",
-        avatarImg: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        phone: "+1 (855) 450-0442",
-        email: "sarah.j@havenestates.com",
-        sold: "85+",
-        experience: "8 Yrs",
-        badge: "Luxury Specialist",
-        bio: "Sarah brings an unmatched eye for architectural design and high-net-worth property marketing, closing record-breaking transactions.",
-        socials: { linkedin: "#", twitter: "#", envelope: "mailto:sarah.j@havenestates.com" }
+        name: "Izhaar Hussain Khan",
+        role: "Registered Dealer (DHA Reg #15)",
+        badge: "DHA Registered Dealer #15",
+        specialty: "DHA Bahawalpur Plots, Files & Construction",
+        avatar: "IK",
+        phone: "0303-6448400",
+        phoneLink: "tel:03036448400",
+        whatsappLink: "https://wa.me/923036448400?text=Hello%20Izhaar%20Hussain%20Khan%2C%20I%20want%20to%20inquire%20about%20DHA%20Bahawalpur%20files%20and%20plots",
+        email: "izhaar@citypropertylinks.com",
+        sold: "220+",
+        experience: "15+ Yrs",
+        bio: "Official registered dealer contact for DHA Bahawalpur (Registration #15) with published 5-star rating. Trusted by hundreds of families and overseas Pakistanis for clear allotment verification.",
+        socials: { whatsapp: "https://wa.me/923036448400", phone: "tel:03036448400", envelope: "mailto:izhaar@citypropertylinks.com" }
     },
     {
         id: "agent-3",
-        name: "David Smith",
-        role: "Commercial Specialist",
-        specialty: "Corporate Buildings & Commercial Rentals",
-        avatarImg: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        phone: "+1 (877) 697-0830",
-        email: "david.s@havenestates.com",
-        sold: "60+",
-        experience: "10 Yrs",
-        badge: "Commercial Lead",
-        bio: "Specializing in corporate leasing, retail spaces, and mixed-use commercial projects with deep analytical market valuation.",
-        socials: { linkedin: "#", twitter: "#", envelope: "mailto:david.s@havenestates.com" }
+        name: "Izhar Balouch",
+        role: "Senior Property Consultant",
+        badge: "Senior Consultant",
+        specialty: "Model Town, Satellite Town & Cantt Houses",
+        avatar: "IB",
+        phone: "0303-6448400",
+        phoneLink: "tel:03036448400",
+        whatsappLink: "https://wa.me/923036448400?text=Hello%20Izhar%20Balouch%2C%20I%20need%20assistance%20finding%20a%20house%20in%20Bahawalpur",
+        email: "izhar.balouch@citypropertylinks.com",
+        sold: "95+",
+        experience: "8+ Yrs",
+        bio: "Key team member at City Property Links listed on Zameen agency profile. Expert in residential house acquisitions, family villas, and verified rental properties in Bahawalpur.",
+        socials: { whatsapp: "https://wa.me/923036448400", phone: "tel:03036448400", envelope: "mailto:izhar.balouch@citypropertylinks.com" }
     },
     {
         id: "agent-4",
-        name: "Emily Thorne",
-        role: "Property Consultant",
-        specialty: "Waterfront & Suburban Family Homes",
-        avatarImg: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        phone: "+1 (800) 319-0511",
-        email: "emily.t@havenestates.com",
-        sold: "45+",
-        experience: "5 Yrs",
-        badge: "Client Choice",
-        bio: "Emily is dedicated to ensuring families find their dream forever homes with a friendly, patient, and highly attentive approach.",
-        socials: { linkedin: "#", twitter: "#", envelope: "mailto:emily.t@havenestates.com" }
-    },
-    {
-        id: "agent-5",
-        name: "Michael Chang",
-        role: "Investment Advisor",
-        specialty: "ROI Portfolios & Land Acquisition",
-        avatarImg: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        phone: "+1 (877) 697-0830",
-        email: "michael.c@havenestates.com",
-        sold: "95+",
-        experience: "12 Yrs",
-        badge: "ROI Expert",
-        bio: "Michael provides institutional and private clients with data-driven portfolio management and strategic land appreciation guidance.",
-        socials: { linkedin: "#", twitter: "#", envelope: "mailto:michael.c@havenestates.com" }
-    },
-    {
-        id: "agent-6",
-        name: "Jessica Alba",
-        role: "Residential Expert",
-        specialty: "Townhouses & Urban Living",
-        avatarImg: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        phone: "+1 (855) 450-0442",
-        email: "jessica.a@havenestates.com",
-        sold: "70+",
-        experience: "7 Yrs",
-        badge: "Urban Specialist",
-        bio: "With a strong focus on urban lifestyle and modern amenities, Jessica guides first-time and relocating buyers to ideal properties.",
-        socials: { linkedin: "#", twitter: "#", envelope: "mailto:jessica.a@havenestates.com" }
+        name: "Muhammad Saeed",
+        role: "Commercial Property Advisor",
+        badge: "Commercial Specialist",
+        specialty: "Airport Road & Commercial Plazas",
+        avatar: "MS",
+        phone: "0303-6448400",
+        phoneLink: "tel:03036448400",
+        whatsappLink: "https://wa.me/923036448400?text=Hello%20Muhammad%20Saeed%2C%20I%20am%20looking%20for%20commercial%20property%20in%20Bahawalpur",
+        email: "saeed@citypropertylinks.com",
+        sold: "75+",
+        experience: "7+ Yrs",
+        bio: "Commercial specialist at City Property Links. Connects business owners, banks, and retailers with prime showroom spaces, commercial plots, and plaza floors on Airport Road.",
+        socials: { whatsapp: "https://wa.me/923036448400", phone: "tel:03036448400", envelope: "mailto:saeed@citypropertylinks.com" }
     }
 ];
 
-// LocalStorage Management Object
+// LocalStorage Database & State Management Layer
 const HavenDB = {
+    // Agency Info
+    getAgencyInfo: function() {
+        return { ...AGENCY_INFO };
+    },
+
+    // Areas
+    getAreas: function() {
+        return [...BAHAWALPUR_AREAS];
+    },
+
+    // Services
+    getServices: function() {
+        return [...AGENCY_SERVICES];
+    },
+
     // Properties
     getProperties: function() {
         const stored = localStorage.getItem('haven_properties');
-        if (!stored) {
+        // Force upgrade if legacy data from earlier templates is found
+        if (!stored || stored.includes('Beverly Hills') || stored.includes('Manhattan') || stored.includes('Austin') || !stored.includes('City Property Links')) {
             localStorage.setItem('haven_properties', JSON.stringify(INITIAL_PROPERTIES));
             return [...INITIAL_PROPERTIES];
         }
         try {
-            const parsed = JSON.parse(stored);
-            // Migrate any old placeholder numbers to real real-estate corporate lines
-            let modified = false;
-            parsed.forEach(p => {
-                if (p.agent && p.agent.phone && p.agent.phone.includes('555')) {
-                    if (p.agent.name === 'David Smith' || p.agent.name === 'Michael Chang') {
-                        p.agent.phone = '+1 (877) 697-0830';
-                    } else if (p.agent.name === 'Sarah Jenkins' || p.agent.name === 'Jessica Alba') {
-                        p.agent.phone = '+1 (855) 450-0442';
-                    } else if (p.agent.name === 'Emily Thorne') {
-                        p.agent.phone = '+1 (800) 319-0511';
-                    } else {
-                        p.agent.phone = '+1 (800) 488-4066';
-                    }
-                    modified = true;
-                }
-            });
-            if (modified) {
-                localStorage.setItem('haven_properties', JSON.stringify(parsed));
-            }
-            return parsed;
+            return JSON.parse(stored);
         } catch (e) {
             console.error("Failed to parse stored properties:", e);
             return [...INITIAL_PROPERTIES];
@@ -393,9 +526,18 @@ const HavenDB = {
     addProperty: function(property) {
         const properties = this.getProperties();
         const priceNum = Number(property.price) || 0;
-        const formattedPrice = property.purpose === 'For Rent' 
-            ? `$${priceNum.toLocaleString()}/mo` 
-            : `$${priceNum.toLocaleString()}`;
+        
+        // Format PKR price nicely
+        let formattedPrice = "";
+        if (property.purpose === 'For Rent') {
+            formattedPrice = `PKR ${priceNum.toLocaleString()}/mo`;
+        } else if (priceNum >= 10000000) {
+            formattedPrice = `PKR ${(priceNum / 10000000).toFixed(2)} Crore`;
+        } else if (priceNum >= 100000) {
+            formattedPrice = `PKR ${(priceNum / 100000).toFixed(2)} Lakh`;
+        } else {
+            formattedPrice = `PKR ${priceNum.toLocaleString()}`;
+        }
 
         const newProperty = {
             id: 'prop-' + Date.now(),
@@ -406,10 +548,13 @@ const HavenDB = {
             beds: Number(property.beds) || 0,
             baths: Number(property.baths) || 0,
             area: Number(property.area) || 0,
+            areaUnit: property.areaUnit || `${property.area} sqft`,
             featured: Boolean(property.featured),
+            network: property.network || "City Property Links",
+            networkPhone: property.networkPhone || "0303-6448400",
+            statusBadge: property.statusBadge || "Verified Listing",
             ...property
         };
-        // Add to front so newest appears first
         properties.unshift(newProperty);
         this.saveProperties(properties);
         return newProperty;
@@ -426,34 +571,16 @@ const HavenDB = {
         this.saveProperties(properties);
     },
 
-    // Agents
+    // Agents / Team
     getAgents: function() {
         const stored = localStorage.getItem('haven_agents');
-        if (!stored) {
+        // Force upgrade if legacy agent data is found
+        if (!stored || stored.includes('Jenkins') || stored.includes('David Smith') || !stored.includes('Kamran')) {
             localStorage.setItem('haven_agents', JSON.stringify(INITIAL_AGENTS));
             return [...INITIAL_AGENTS];
         }
         try {
-            const parsed = JSON.parse(stored);
-            let modified = false;
-            parsed.forEach(a => {
-                if (a.phone && a.phone.includes('555')) {
-                    if (a.name === 'David Smith' || a.name === 'Michael Chang') {
-                        a.phone = '+1 (877) 697-0830';
-                    } else if (a.name === 'Sarah Jenkins' || a.name === 'Jessica Alba') {
-                        a.phone = '+1 (855) 450-0442';
-                    } else if (a.name === 'Emily Thorne') {
-                        a.phone = '+1 (800) 319-0511';
-                    } else {
-                        a.phone = '+1 (800) 488-4066';
-                    }
-                    modified = true;
-                }
-            });
-            if (modified) {
-                localStorage.setItem('haven_agents', JSON.stringify(parsed));
-            }
-            return parsed;
+            return JSON.parse(stored);
         } catch (e) {
             return [...INITIAL_AGENTS];
         }
@@ -495,7 +622,7 @@ const HavenDB = {
         return favs.includes(String(propId));
     },
 
-    // Inquiries (Contact Form & Agent Messages)
+    // Inquiries
     saveInquiry: function(inquiry) {
         const inquiries = this.getInquiries();
         const record = {
@@ -517,7 +644,7 @@ const HavenDB = {
         }
     },
 
-    // Newsletter Subscriptions
+    // Subscriptions
     saveSubscription: function(email) {
         const subs = this.getSubscriptions();
         if (!subs.includes(email)) {
@@ -536,7 +663,7 @@ const HavenDB = {
         }
     },
 
-    // Reset database to initial sample data
+    // Reset database to initial authentic Bahawalpur data
     resetDatabase: function() {
         localStorage.setItem('haven_properties', JSON.stringify(INITIAL_PROPERTIES));
         localStorage.setItem('haven_agents', JSON.stringify(INITIAL_AGENTS));
@@ -545,4 +672,8 @@ const HavenDB = {
     }
 };
 
+window.AGENCY_INFO = AGENCY_INFO;
+window.BAHAWALPUR_AREAS = BAHAWALPUR_AREAS;
+window.AGENCY_SERVICES = AGENCY_SERVICES;
 window.HavenDB = HavenDB;
+window.CityPropertyDB = HavenDB;
